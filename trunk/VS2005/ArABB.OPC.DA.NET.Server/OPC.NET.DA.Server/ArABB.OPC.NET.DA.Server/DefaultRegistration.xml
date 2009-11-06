@@ -1,0 +1,8 @@
+<ListOfRegisteredServers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://opcfoundation.org/ConfigTool">
+  <Server>
+    <ProgId>ArABB.OPC.NET.DA.Server.Wrapped</ProgId>
+    <Clsid>1437DC7F-D66E-4AA3-BA79-2CD0A4A6F3D8</Clsid>
+    <WrapperClsid>ArABB.OPC.NET.DA.Server.Wrapped</WrapperClsid>
+    <ServerClsid>ArABB.OPC.NET.DA.Server</ServerClsid>
+  </Server>
+</ListOfRegisteredServers>
