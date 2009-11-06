@@ -1,0 +1,11 @@
+﻿<SequentialWorkflowActivity x:Class="HelloWorkFlow.WorkflowMain" Initialized="WorkflowMain_Initialized" x:Name="WorkflowMain" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<WhileActivity x:Name="whileActivity1">
+		<WhileActivity.Condition>
+			<CodeCondition Condition="{ActivityBind WorkflowMain,Path=whileActivity1_Condition1}" />
+		</WhileActivity.Condition>
+		<CodeActivity x:Name="codeActivity1" ExecuteCode="codeActivity1_ExecuteCode" />
+		<CancellationHandlerActivity x:Name="cancellationHandlerActivity2" />
+	</WhileActivity>
+	<FaultHandlersActivity x:Name="faultHandlersActivity1" />
+	<CancellationHandlerActivity x:Name="cancellationHandlerActivity1" />
+</SequentialWorkflowActivity>
