@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCustomControl", "MyCustomControl\MyCustomControl.csproj", "{21FC0C77-FDDE-4A6C-880E-1391A2F33659}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMyControl", "TestMyControl\TestMyControl.csproj", "{28044FE8-BAC9-423E-95E5-7F85985B75B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21FC0C77-FDDE-4A6C-880E-1391A2F33659}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21FC0C77-FDDE-4A6C-880E-1391A2F33659}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21FC0C77-FDDE-4A6C-880E-1391A2F33659}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21FC0C77-FDDE-4A6C-880E-1391A2F33659}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28044FE8-BAC9-423E-95E5-7F85985B75B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28044FE8-BAC9-423E-95E5-7F85985B75B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28044FE8-BAC9-423E-95E5-7F85985B75B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28044FE8-BAC9-423E-95E5-7F85985B75B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
