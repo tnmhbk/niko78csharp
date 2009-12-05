@@ -11,44 +11,28 @@ namespace Niko78.CSharp.RemotingClient
 {
     using System;
     using System.Runtime.Remoting;
+    using System.Runtime.Remoting.Messaging;
     using System.Windows.Forms;
     using RemotingObject;
 
     /// <summary>
     /// Formulario principal de la App.
     /// </summary>
-    public partial class Form1 : Form
+    public partial class FormMain : Form
     {
         /// <summary>
         /// Objeto remoto.
         /// </summary>
-        private MyObjetoRemoto _myObjetoRemoto;
+        private readonly MyObjetoRemoto _myObjetoRemoto;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Form1"/> class.
+        /// Initializes a new instance of the <see cref="FormMain"/> class.
         /// </summary>
-        public Form1()
+        public FormMain()
         {
             InitializeComponent();
-        }
-
-        /// <summary>
-        /// Inicializa el objeto remoto.
-        /// </summary>
-        /// <param name="sender">The event sender.</param>
-        /// <param name="e">The event argument.</param>
-        private void Inicializar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                RemotingConfiguration.Configure("ConfigClienteRemoting.xml", false);
-                _myObjetoRemoto = new MyObjetoRemoto();
-                MessageBox.Show("Objeto Inicializado con exito !", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception er)
-            {
-                MessageBox.Show(string.Format("Error:\n{0}", er.Message), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            RemotingConfiguration.Configure("ConfigClienteRemoting.xml", false);
+            _myObjetoRemoto = new MyObjetoRemoto();
         }
 
         /// <summary>
@@ -65,7 +49,7 @@ namespace Niko78.CSharp.RemotingClient
             }
             catch (Exception er)
             {
-                MessageBox.Show(string.Format("El objeto respondio:\n{0}", er.Message), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(string.Format("Error:\n{0}", er.Message), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -82,7 +66,73 @@ namespace Niko78.CSharp.RemotingClient
             }
             catch (Exception er)
             {
-                MessageBox.Show(string.Format("El objeto respondio:\n{0}", er.Message), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(string.Format("Error:\n{0}", er.Message), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Obtiene el objeto de contexto local y remoto
+        /// </summary>
+        /// <param name="sender">The event sender.</param>
+        /// <param name="e">The event argument.</param>
+        private void ObtenerObjetoContexto_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string messageRemoto = _myObjetoRemoto.GetObjetoContexto();
+
+                object objetoLocal = CallContext.GetData("MyContextData");
+                string messageLocal = "nulo";
+
+                if (messageRemoto == null)
+                {
+                    messageRemoto = "nulo";
+                }
+
+                if (objetoLocal != null)
+                {
+                    messageLocal = ((CallContextData) objetoLocal).Message;
+                }
+
+                MessageBox.Show("remoto: " + messageRemoto + "\n local: " + messageLocal, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show(string.Format("Error:\n{0}", er.Message), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Setea el objeto de contexto en forma local
+        /// </summary>
+        /// <param name="sender">The event sender.</param>
+        /// <param name="e">The event argument.</param>
+        private void SetObjetoContexto_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CallContext.SetData("MyContextData", new CallContextData("Hola desde Local"));
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show(string.Format("Error:\n{0}", er.Message), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Setea el objeto de contexto en forma remota
+        /// </summary>
+        /// <param name="sender">The event sender.</param>
+        /// <param name="e">The event argument.</param>
+        private void SetObjetoContextoRemoto_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                _myObjetoRemoto.SetObjetoContextoRemoto();
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show(string.Format("Error:\n{0}", er.Message), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
