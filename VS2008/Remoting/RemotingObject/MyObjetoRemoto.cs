@@ -62,5 +62,10 @@ namespace RemotingObject
             object obj = CallContext.GetData("MyContextData");
             return obj == null ? null : ((CallContextData) obj).Message;
         }
+
+        public void GenerarExcepcion()
+        {
+            throw new CustomRemotableException("Execpion remota");
+        }
     }
 }
