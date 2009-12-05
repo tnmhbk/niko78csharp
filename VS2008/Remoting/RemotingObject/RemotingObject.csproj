@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CallContextData.cs" />
     <Compile Include="MyObjetoRemoto.cs" />
     <Compile Include="ExceptionRemotas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

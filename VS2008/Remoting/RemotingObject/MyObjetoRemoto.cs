@@ -10,6 +10,7 @@
 namespace RemotingObject
 {
     using System;
+    using System.Runtime.Remoting.Messaging;
 
     /// <summary>
     /// Objeto remoto.
@@ -40,6 +41,26 @@ namespace RemotingObject
         public void SetNombre(string nombre)
         {
             _nombre = nombre;
+        }
+
+        /// <summary>
+        /// Setea el objeto de contexto "MyContextData" con el valor "Hola desde remoto"
+        /// </summary>
+        public void SetObjetoContextoRemoto()
+        {
+            CallContext.SetData("MyContextData", new CallContextData("Hola desde remoto"));
+        }
+
+        /// <summary>
+        /// Obtiene el objeto de contexto "MyContextData" 
+        /// </summary>
+        /// <returns>
+        /// El campo message del objeto remoto
+        /// </returns>
+        public string GetObjetoContexto()
+        {
+            object obj = CallContext.GetData("MyContextData");
+            return obj == null ? null : ((CallContextData) obj).Message;
         }
     }
 }
