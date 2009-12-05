@@ -36,6 +36,7 @@
             this.btnSetObjetoContextoRemoto = new System.Windows.Forms.Button();
             this.gbxMetodosSimples = new System.Windows.Forms.GroupBox();
             this.gbxObjetosDeContexto = new System.Windows.Forms.GroupBox();
+            this.btnProbarExcepcion = new System.Windows.Forms.Button();
             this.gbxMetodosSimples.SuspendLayout();
             this.gbxObjetosDeContexto.SuspendLayout();
             this.SuspendLayout();
@@ -121,11 +122,22 @@
             this.gbxObjetosDeContexto.TabStop = false;
             this.gbxObjetosDeContexto.Text = "Objetos de Contexto";
             // 
+            // btnProbarExcepcion
+            // 
+            this.btnProbarExcepcion.Location = new System.Drawing.Point(18, 176);
+            this.btnProbarExcepcion.Name = "btnProbarExcepcion";
+            this.btnProbarExcepcion.Size = new System.Drawing.Size(142, 34);
+            this.btnProbarExcepcion.TabIndex = 8;
+            this.btnProbarExcepcion.Text = "Genrar Exepcion Server";
+            this.btnProbarExcepcion.UseVisualStyleBackColor = true;
+            this.btnProbarExcepcion.Click += new System.EventHandler(this.ProbarExcepcion_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 172);
+            this.ClientSize = new System.Drawing.Size(448, 226);
+            this.Controls.Add(this.btnProbarExcepcion);
             this.Controls.Add(this.gbxObjetosDeContexto);
             this.Controls.Add(this.gbxMetodosSimples);
             this.Name = "FormMain";
@@ -147,5 +159,6 @@
         private System.Windows.Forms.Button btnSetObjetoContextoRemoto;
         private System.Windows.Forms.GroupBox gbxMetodosSimples;
         private System.Windows.Forms.GroupBox gbxObjetosDeContexto;
+        private System.Windows.Forms.Button btnProbarExcepcion;
     }
 }

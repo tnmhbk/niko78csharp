@@ -135,5 +135,17 @@ namespace Niko78.CSharp.RemotingClient
                 MessageBox.Show(string.Format("Error:\n{0}", er.Message), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void ProbarExcepcion_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                _myObjetoRemoto.GenerarExcepcion();
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show(string.Format("Error:\n{0}", er.Message), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
