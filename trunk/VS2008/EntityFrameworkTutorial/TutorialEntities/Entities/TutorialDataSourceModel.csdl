@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TutorialEntities" Alias="Self" devart:FilePerClass="true" devart:ViewGeneration="false" xmlns="http://schemas.microsoft.com/ado/2006/04/edm" xmlns:devart="http://devart.com/schemas/edml/ConceptualSchemaExtensions/1.0">
+  <EntityContainer Name="TutorialObjectContext">
+    <EntitySet Name="Pallets" EntityType="TutorialEntities.Pallet" />
+    <EntitySet Name="Articulos" EntityType="TutorialEntities.Articulo" />
+    <EntitySet Name="Personas" EntityType="TutorialEntities.Persona" />
+    <EntitySet Name="Vehiculos" EntityType="TutorialEntities.Vehiculo" />
+    <AssociationSet Name="Articulo_PalletSet" Association="TutorialEntities.Articulo_Pallet">
+      <End Role="Articulo" EntitySet="Articulos" />
+      <End Role="Pallets" EntitySet="Pallets" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Pallet">
+    <Documentation>
+      <Summary>Pallet del Almacen</Summary>
+      <LongDescription>Representa un pallet del Almacen</LongDescription>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false">
+      <Documentation>
+        <Summary>Id del pallet</Summary>
+        <LongDescription>Id del pallet, debe ser de 7 digitos</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Lote" Type="String" Nullable="false" MaxLength="10" />
+    <Property Name="FechaEntrada" Type="DateTime" />
+    <Property Name="Bloqueado" Type="String" Nullable="false" DefaultValue="'N'                   " MaxLength="1" />
+    <NavigationProperty Name="Articulo" Relationship="TutorialEntities.Articulo_Pallet" FromRole="Pallets" ToRole="Articulo" />
+  </EntityType>
+  <EntityType Name="Articulo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="10" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" />
+    <Property Name="CantPalletCompleto" Type="Int64" />
+    <NavigationProperty Name="Pallets" Relationship="TutorialEntities.Articulo_Pallet" FromRole="Articulo" ToRole="Pallets" />
+  </EntityType>
+  <EntityType Name="Persona">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="50" />
+    <Property Name="Apellido" Type="String" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Gerente" BaseType="TutorialEntities.Persona" devart:InheritanceType="TablePerType">
+    <Property Name="Cargo" Type="String" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Desarrollador" BaseType="TutorialEntities.Persona" devart:InheritanceType="TablePerType">
+    <Property Name="Nivel" Type="String" Nullable="false" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="LiderTecnico" BaseType="TutorialEntities.Desarrollador" devart:InheritanceType="TablePerType">
+    <Property Name="Projecto" Type="String" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Vehiculo" devart:InheritanceModifier="Abstract" Abstract="true">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" />
+    <Property Name="Peso" Type="Int32" Nullable="false" />
+    <Property Name="Descripcion" Type="String" />
+  </EntityType>
+  <EntityType Name="Moto" BaseType="TutorialEntities.Vehiculo" devart:InheritanceType="TablePerConcreteType">
+    <Property Name="EncPedal" Type="String" Nullable="false" DefaultValue="'Y'" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="Automovil" BaseType="TutorialEntities.Vehiculo" devart:InheritanceType="TablePerConcreteType">
+    <Property Name="CantPuertas" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Scooter" BaseType="TutorialEntities.Moto" devart:InheritanceType="TablePerConcreteType">
+    <Property Name="Spoiler" Type="String" Nullable="false" DefaultValue="'Y'  &#xA;" MaxLength="1" />
+  </EntityType>
+  <Association Name="Articulo_Pallet">
+    <End Role="Articulo" Type="TutorialEntities.Articulo" Multiplicity="1" />
+    <End Role="Pallets" Type="TutorialEntities.Pallet" Multiplicity="*" />
+  </Association>
+</Schema>

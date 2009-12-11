@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TutorialEntities.Store" Alias="Self" Provider="Devart.Data.Oracle" ProviderManifestToken="Ora10gR2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl" xmlns:devart="http://devart.com/schemas/edml/StorageSchemaExtensions/1.0">
+  <EntityContainer Name="ENTITY_TUTORIALEntitiesStoreContainer">
+    <EntitySet Name="PALLETS" EntityType="TutorialEntities.Store.PALLETS" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="PALLETS" />
+    <EntitySet Name="ARTICULOS" EntityType="TutorialEntities.Store.ARTICULOS" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="ARTICULOS" />
+    <EntitySet Name="GERENTEs" EntityType="TutorialEntities.Store.GERENTE" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="GERENTE" />
+    <EntitySet Name="LIDER_TECNICOs" EntityType="TutorialEntities.Store.LIDER_TECNICO" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="LIDER_TECNICO" />
+    <EntitySet Name="PERSONAs" EntityType="TutorialEntities.Store.PERSONA" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="PERSONA" />
+    <EntitySet Name="DESARROLLADORs" EntityType="TutorialEntities.Store.DESARROLLADOR" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="DESARROLLADOR" />
+    <EntitySet Name="MOTOs" EntityType="TutorialEntities.Store.MOTO" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="MOTO" />
+    <EntitySet Name="AUTOMOVILs" EntityType="TutorialEntities.Store.AUTOMOVIL" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="AUTOMOVIL" />
+    <EntitySet Name="SCOOTERs" EntityType="TutorialEntities.Store.SCOOTER" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="SCOOTER" />
+    <AssociationSet Name="PALLETS_ARTICULOS" Association="TutorialEntities.Store.PALLETS_ARTICULOS">
+      <End Role="ARTICULOS" EntitySet="ARTICULOS" />
+      <End Role="PALLETS" EntitySet="PALLETS" />
+    </AssociationSet>
+    <AssociationSet Name="SYS_C005931" Association="TutorialEntities.Store.SYS_C005931">
+      <End Role="PERSONA" EntitySet="PERSONAs" />
+      <End Role="GERENTE" EntitySet="GERENTEs" />
+    </AssociationSet>
+    <AssociationSet Name="LIDER_TECNICO_DESARROLLADOR" Association="TutorialEntities.Store.LIDER_TECNICO_DESARROLLADOR">
+      <End Role="DESARROLLADOR" EntitySet="DESARROLLADORs" />
+      <End Role="LIDER_TECNICO" EntitySet="LIDER_TECNICOs" />
+    </AssociationSet>
+    <AssociationSet Name="DESARROLLADOR_PERSONA" Association="TutorialEntities.Store.DESARROLLADOR_PERSONA">
+      <End Role="PERSONA" EntitySet="PERSONAs" />
+      <End Role="DESARROLLADOR" EntitySet="DESARROLLADORs" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="PALLETS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int64" Nullable="false" />
+    <Property Name="CODIGO" Type="VARCHAR2" Nullable="false" MaxLength="10" />
+    <Property Name="LOTE" Type="VARCHAR2" Nullable="false" MaxLength="10" />
+    <Property Name="FECHA_ENTRADA" Type="DATE" />
+    <Property Name="BLOQUEADO" Type="CHAR" Nullable="false" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="ARTICULOS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="VARCHAR2" Nullable="false" MaxLength="10" />
+    <Property Name="DESCRIPCION" Type="VARCHAR2" MaxLength="100" />
+    <Property Name="CANT_PALLET_COMPLETO" Type="int64" />
+  </EntityType>
+  <EntityType Name="GERENTE">
+    <Key>
+      <PropertyRef Name="ID_PERSONA" />
+    </Key>
+    <Property Name="ID_PERSONA" Type="int64" Nullable="false" />
+    <Property Name="CARGO" Type="VARCHAR2" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LIDER_TECNICO">
+    <Key>
+      <PropertyRef Name="ID_DESARROLLADOR" />
+    </Key>
+    <Property Name="ID_DESARROLLADOR" Type="int64" Nullable="false" />
+    <Property Name="PROJECTO" Type="VARCHAR2" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PERSONA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int64" Nullable="false" />
+    <Property Name="NOMBRE" Type="VARCHAR2" MaxLength="50" />
+    <Property Name="APELLIDO" Type="VARCHAR2" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DESARROLLADOR">
+    <Key>
+      <PropertyRef Name="ID_PERSONA" />
+    </Key>
+    <Property Name="ID_PERSONA" Type="int64" Nullable="false" />
+    <Property Name="NIVEL" Type="VARCHAR2" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="MOTO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int64" Nullable="false" />
+    <Property Name="PESO" Type="int" />
+    <Property Name="ENC_PEDAL" Type="CHAR" MaxLength="1" />
+    <Property Name="DESCRIPCION" Type="VARCHAR2" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AUTOMOVIL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int64" Nullable="false" />
+    <Property Name="PESO" Type="int" />
+    <Property Name="CANT_PUERTAS" Type="int" />
+    <Property Name="DESCRIPCION" Type="VARCHAR2" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SCOOTER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int64" Nullable="false" />
+    <Property Name="PESO" Type="int" />
+    <Property Name="ENC_PEDAL" Type="CHAR" MaxLength="1" />
+    <Property Name="DESCRIPCION" Type="VARCHAR2" MaxLength="50" />
+    <Property Name="SPOILER" Type="CHAR" MaxLength="1" />
+  </EntityType>
+  <Association Name="PALLETS_ARTICULOS">
+    <End Role="ARTICULOS" Type="TutorialEntities.Store.ARTICULOS" Multiplicity="1" />
+    <End Role="PALLETS" Type="TutorialEntities.Store.PALLETS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ARTICULOS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PALLETS">
+        <PropertyRef Name="CODIGO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SYS_C005931">
+    <End Role="PERSONA" Type="TutorialEntities.Store.PERSONA" Multiplicity="1" />
+    <End Role="GERENTE" Type="TutorialEntities.Store.GERENTE" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="PERSONA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GERENTE">
+        <PropertyRef Name="ID_PERSONA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LIDER_TECNICO_DESARROLLADOR">
+    <End Role="DESARROLLADOR" Type="TutorialEntities.Store.DESARROLLADOR" Multiplicity="1" />
+    <End Role="LIDER_TECNICO" Type="TutorialEntities.Store.LIDER_TECNICO" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="DESARROLLADOR">
+        <PropertyRef Name="ID_PERSONA" />
+      </Principal>
+      <Dependent Role="LIDER_TECNICO">
+        <PropertyRef Name="ID_DESARROLLADOR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DESARROLLADOR_PERSONA">
+    <End Role="PERSONA" Type="TutorialEntities.Store.PERSONA" Multiplicity="1" />
+    <End Role="DESARROLLADOR" Type="TutorialEntities.Store.DESARROLLADOR" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="PERSONA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DESARROLLADOR">
+        <PropertyRef Name="ID_PERSONA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

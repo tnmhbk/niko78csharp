@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TutorialEntities.Store" Alias="Self" Provider="Devart.Data.Oracle" ProviderManifestToken="Ora10gR2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl" xmlns:devart="http://devart.com/schemas/edml/StorageSchemaExtensions/1.0">
+        <EntityContainer Name="ENTITY_TUTORIALEntitiesStoreContainer">
+          <EntitySet Name="PALLETS" EntityType="TutorialEntities.Store.PALLETS" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="PALLETS" />
+          <EntitySet Name="ARTICULOS" EntityType="TutorialEntities.Store.ARTICULOS" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="ARTICULOS" />
+          <EntitySet Name="GERENTEs" EntityType="TutorialEntities.Store.GERENTE" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="GERENTE" />
+          <EntitySet Name="LIDER_TECNICOs" EntityType="TutorialEntities.Store.LIDER_TECNICO" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="LIDER_TECNICO" />
+          <EntitySet Name="PERSONAs" EntityType="TutorialEntities.Store.PERSONA" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="PERSONA" />
+          <EntitySet Name="DESARROLLADORs" EntityType="TutorialEntities.Store.DESARROLLADOR" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="DESARROLLADOR" />
+          <EntitySet Name="MOTOs" EntityType="TutorialEntities.Store.MOTO" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="MOTO" />
+          <EntitySet Name="AUTOMOVILs" EntityType="TutorialEntities.Store.AUTOMOVIL" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="AUTOMOVIL" />
+          <EntitySet Name="SCOOTERs" EntityType="TutorialEntities.Store.SCOOTER" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="SCOOTER" />
+          <AssociationSet Name="PALLETS_ARTICULOS" Association="TutorialEntities.Store.PALLETS_ARTICULOS">
+            <End Role="ARTICULOS" EntitySet="ARTICULOS" />
+            <End Role="PALLETS" EntitySet="PALLETS" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C005931" Association="TutorialEntities.Store.SYS_C005931">
+            <End Role="PERSONA" EntitySet="PERSONAs" />
+            <End Role="GERENTE" EntitySet="GERENTEs" />
+          </AssociationSet>
+          <AssociationSet Name="LIDER_TECNICO_DESARROLLADOR" Association="TutorialEntities.Store.LIDER_TECNICO_DESARROLLADOR">
+            <End Role="DESARROLLADOR" EntitySet="DESARROLLADORs" />
+            <End Role="LIDER_TECNICO" EntitySet="LIDER_TECNICOs" />
+          </AssociationSet>
+          <AssociationSet Name="DESARROLLADOR_PERSONA" Association="TutorialEntities.Store.DESARROLLADOR_PERSONA">
+            <End Role="PERSONA" EntitySet="PERSONAs" />
+            <End Role="DESARROLLADOR" EntitySet="DESARROLLADORs" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="PALLETS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int64" Nullable="false" />
+          <Property Name="CODIGO" Type="VARCHAR2" Nullable="false" MaxLength="10" />
+          <Property Name="LOTE" Type="VARCHAR2" Nullable="false" MaxLength="10" />
+          <Property Name="FECHA_ENTRADA" Type="DATE" />
+          <Property Name="BLOQUEADO" Type="CHAR" Nullable="false" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="ARTICULOS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="VARCHAR2" Nullable="false" MaxLength="10" />
+          <Property Name="DESCRIPCION" Type="VARCHAR2" MaxLength="100" />
+          <Property Name="CANT_PALLET_COMPLETO" Type="int64" />
+        </EntityType>
+        <EntityType Name="GERENTE">
+          <Key>
+            <PropertyRef Name="ID_PERSONA" />
+          </Key>
+          <Property Name="ID_PERSONA" Type="int64" Nullable="false" />
+          <Property Name="CARGO" Type="VARCHAR2" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="LIDER_TECNICO">
+          <Key>
+            <PropertyRef Name="ID_DESARROLLADOR" />
+          </Key>
+          <Property Name="ID_DESARROLLADOR" Type="int64" Nullable="false" />
+          <Property Name="PROJECTO" Type="VARCHAR2" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PERSONA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int64" Nullable="false" />
+          <Property Name="NOMBRE" Type="VARCHAR2" MaxLength="50" />
+          <Property Name="APELLIDO" Type="VARCHAR2" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DESARROLLADOR">
+          <Key>
+            <PropertyRef Name="ID_PERSONA" />
+          </Key>
+          <Property Name="ID_PERSONA" Type="int64" Nullable="false" />
+          <Property Name="NIVEL" Type="VARCHAR2" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="MOTO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int64" Nullable="false" />
+          <Property Name="PESO" Type="int" />
+          <Property Name="ENC_PEDAL" Type="CHAR" MaxLength="1" />
+          <Property Name="DESCRIPCION" Type="VARCHAR2" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="AUTOMOVIL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int64" Nullable="false" />
+          <Property Name="PESO" Type="int" />
+          <Property Name="CANT_PUERTAS" Type="int" />
+          <Property Name="DESCRIPCION" Type="VARCHAR2" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SCOOTER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int64" Nullable="false" />
+          <Property Name="PESO" Type="int" />
+          <Property Name="ENC_PEDAL" Type="CHAR" MaxLength="1" />
+          <Property Name="DESCRIPCION" Type="VARCHAR2" MaxLength="50" />
+          <Property Name="SPOILER" Type="CHAR" MaxLength="1" />
+        </EntityType>
+        <Association Name="PALLETS_ARTICULOS">
+          <End Role="ARTICULOS" Type="TutorialEntities.Store.ARTICULOS" Multiplicity="1" />
+          <End Role="PALLETS" Type="TutorialEntities.Store.PALLETS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ARTICULOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PALLETS">
+              <PropertyRef Name="CODIGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C005931">
+          <End Role="PERSONA" Type="TutorialEntities.Store.PERSONA" Multiplicity="1" />
+          <End Role="GERENTE" Type="TutorialEntities.Store.GERENTE" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GERENTE">
+              <PropertyRef Name="ID_PERSONA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LIDER_TECNICO_DESARROLLADOR">
+          <End Role="DESARROLLADOR" Type="TutorialEntities.Store.DESARROLLADOR" Multiplicity="1" />
+          <End Role="LIDER_TECNICO" Type="TutorialEntities.Store.LIDER_TECNICO" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="DESARROLLADOR">
+              <PropertyRef Name="ID_PERSONA" />
+            </Principal>
+            <Dependent Role="LIDER_TECNICO">
+              <PropertyRef Name="ID_DESARROLLADOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DESARROLLADOR_PERSONA">
+          <End Role="PERSONA" Type="TutorialEntities.Store.PERSONA" Multiplicity="1" />
+          <End Role="DESARROLLADOR" Type="TutorialEntities.Store.DESARROLLADOR" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DESARROLLADOR">
+              <PropertyRef Name="ID_PERSONA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TutorialEntities" Alias="Self" devart:FilePerClass="true" devart:ViewGeneration="false" xmlns="http://schemas.microsoft.com/ado/2006/04/edm" xmlns:devart="http://devart.com/schemas/edml/ConceptualSchemaExtensions/1.0">
+        <EntityContainer Name="TutorialObjectContext">
+          <EntitySet Name="Pallets" EntityType="TutorialEntities.Pallet" />
+          <EntitySet Name="Articulos" EntityType="TutorialEntities.Articulo" />
+          <EntitySet Name="Personas" EntityType="TutorialEntities.Persona" />
+          <EntitySet Name="Vehiculos" EntityType="TutorialEntities.Vehiculo" />
+          <AssociationSet Name="Articulo_PalletSet" Association="TutorialEntities.Articulo_Pallet">
+            <End Role="Articulo" EntitySet="Articulos" />
+            <End Role="Pallets" EntitySet="Pallets" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Pallet">
+          <Documentation>
+            <Summary>Pallet del Almacen</Summary>
+            <LongDescription>Representa un pallet del Almacen</LongDescription>
+          </Documentation>
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false">
+            <Documentation>
+              <Summary>Id del pallet</Summary>
+              <LongDescription>Id del pallet, debe ser de 7 digitos</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Name="Lote" Type="String" Nullable="false" MaxLength="10" />
+          <Property Name="FechaEntrada" Type="DateTime" />
+          <Property Name="Bloqueado" Type="String" Nullable="false" DefaultValue="'N'                   " MaxLength="1" />
+          <NavigationProperty Name="Articulo" Relationship="TutorialEntities.Articulo_Pallet" FromRole="Pallets" ToRole="Articulo" />
+        </EntityType>
+        <EntityType Name="Articulo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="10" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" />
+          <Property Name="CantPalletCompleto" Type="Int64" />
+          <NavigationProperty Name="Pallets" Relationship="TutorialEntities.Articulo_Pallet" FromRole="Articulo" ToRole="Pallets" />
+        </EntityType>
+        <EntityType Name="Persona">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" />
+          <Property Name="Apellido" Type="String" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Gerente" BaseType="TutorialEntities.Persona" devart:InheritanceType="TablePerType">
+          <Property Name="Cargo" Type="String" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Desarrollador" BaseType="TutorialEntities.Persona" devart:InheritanceType="TablePerType">
+          <Property Name="Nivel" Type="String" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="LiderTecnico" BaseType="TutorialEntities.Desarrollador" devart:InheritanceType="TablePerType">
+          <Property Name="Projecto" Type="String" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Vehiculo" devart:InheritanceModifier="Abstract" Abstract="true">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" />
+          <Property Name="Peso" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" />
+        </EntityType>
+        <EntityType Name="Moto" BaseType="TutorialEntities.Vehiculo" devart:InheritanceType="TablePerConcreteType">
+          <Property Name="EncPedal" Type="String" Nullable="false" DefaultValue="'Y'" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="Automovil" BaseType="TutorialEntities.Vehiculo" devart:InheritanceType="TablePerConcreteType">
+          <Property Name="CantPuertas" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Scooter" BaseType="TutorialEntities.Moto" devart:InheritanceType="TablePerConcreteType">
+          <Property Name="Spoiler" Type="String" Nullable="false" DefaultValue="'Y'  &#xA;" MaxLength="1" />
+        </EntityType>
+        <Association Name="Articulo_Pallet">
+          <End Role="Articulo" Type="TutorialEntities.Articulo" Multiplicity="1" />
+          <End Role="Pallets" Type="TutorialEntities.Pallet" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- MSL content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="ENTITY_TUTORIALEntitiesStoreContainer" CdmEntityContainer="TutorialObjectContext">
+          <EntitySetMapping Name="Pallets">
+            <EntityTypeMapping TypeName="TutorialEntities.Pallet">
+              <MappingFragment StoreEntitySet="PALLETS">
+                <ScalarProperty Name="Id" ColumnName="ID" />
+                <ScalarProperty Name="Lote" ColumnName="LOTE" />
+                <ScalarProperty Name="FechaEntrada" ColumnName="FECHA_ENTRADA" />
+                <ScalarProperty Name="Bloqueado" ColumnName="BLOQUEADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Articulos">
+            <EntityTypeMapping TypeName="TutorialEntities.Articulo">
+              <MappingFragment StoreEntitySet="ARTICULOS">
+                <ScalarProperty Name="Id" ColumnName="ID" />
+                <ScalarProperty Name="Descripcion" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="CantPalletCompleto" ColumnName="CANT_PALLET_COMPLETO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personas">
+            <EntityTypeMapping TypeName="IsTypeOf(TutorialEntities.Persona)">
+              <MappingFragment StoreEntitySet="PERSONAs">
+                <ScalarProperty Name="Id" ColumnName="ID" />
+                <ScalarProperty Name="Nombre" ColumnName="NOMBRE" />
+                <ScalarProperty Name="Apellido" ColumnName="APELLIDO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="TutorialEntities.Gerente">
+              <MappingFragment StoreEntitySet="GERENTEs">
+                <ScalarProperty Name="Cargo" ColumnName="CARGO" />
+                <ScalarProperty Name="Id" ColumnName="ID_PERSONA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(TutorialEntities.Desarrollador)">
+              <MappingFragment StoreEntitySet="DESARROLLADORs">
+                <ScalarProperty Name="Nivel" ColumnName="NIVEL" />
+                <ScalarProperty Name="Id" ColumnName="ID_PERSONA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="TutorialEntities.LiderTecnico">
+              <MappingFragment StoreEntitySet="LIDER_TECNICOs">
+                <ScalarProperty Name="Projecto" ColumnName="PROJECTO" />
+                <ScalarProperty Name="Id" ColumnName="ID_DESARROLLADOR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vehiculos">
+            <EntityTypeMapping TypeName="IsTypeOf(TutorialEntities.Moto)">
+              <MappingFragment StoreEntitySet="MOTOs">
+                <ScalarProperty Name="EncPedal" ColumnName="ENC_PEDAL" />
+                <ScalarProperty Name="Id" ColumnName="ID" />
+                <ScalarProperty Name="Peso" ColumnName="PESO" />
+                <ScalarProperty Name="Descripcion" ColumnName="DESCRIPCION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="TutorialEntities.Scooter">
+              <MappingFragment StoreEntitySet="SCOOTERs">
+                <ScalarProperty Name="Spoiler" ColumnName="SPOILER" />
+                <ScalarProperty Name="Id" ColumnName="ID" />
+                <ScalarProperty Name="Peso" ColumnName="PESO" />
+                <ScalarProperty Name="EncPedal" ColumnName="ENC_PEDAL" />
+                <ScalarProperty Name="Descripcion" ColumnName="DESCRIPCION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="TutorialEntities.Automovil">
+              <MappingFragment StoreEntitySet="AUTOMOVILs">
+                <ScalarProperty Name="CantPuertas" ColumnName="CANT_PUERTAS" />
+                <ScalarProperty Name="Id" ColumnName="ID" />
+                <ScalarProperty Name="Peso" ColumnName="PESO" />
+                <ScalarProperty Name="Descripcion" ColumnName="DESCRIPCION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Articulo_PalletSet" TypeName="TutorialEntities.Articulo_Pallet" StoreEntitySet="PALLETS">
+            <EndProperty Name="Articulo">
+              <ScalarProperty Name="Id" ColumnName="CODIGO" />
+            </EndProperty>
+            <EndProperty Name="Pallets">
+              <ScalarProperty Name="Id" ColumnName="ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <edmx:Diagrams>
+      <Diagram Name="Main" />
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
