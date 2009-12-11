@@ -27,8 +27,10 @@ namespace SimpleFileLogger
         /// <param name="args">Comnad line Arguments.</param>
         public static void Main(string[] args)
         {
-            MyLogger.Debug("This is a simple logger !");
-            MyLogger.Info("This is a simple logger again!");
+            for (int i = 0; i < 300; i++)
+            {
+                MyLogger.Info("This is a simple logger again!" + i, new object[] { 1, 2 });
+            }
         }
     }
 }
