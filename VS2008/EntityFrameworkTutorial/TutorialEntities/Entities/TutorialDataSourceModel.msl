@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+  <EntityContainerMapping StorageEntityContainer="ENTITY_TUTORIALEntitiesStoreContainer" CdmEntityContainer="TutorialObjectContext">
+    <EntitySetMapping Name="Pallets">
+      <EntityTypeMapping TypeName="TutorialEntities.Pallet">
+        <MappingFragment StoreEntitySet="PALLETS">
+          <ScalarProperty Name="Id" ColumnName="ID" />
+          <ScalarProperty Name="Lote" ColumnName="LOTE" />
+          <ScalarProperty Name="FechaEntrada" ColumnName="FECHA_ENTRADA" />
+          <ScalarProperty Name="Bloqueado" ColumnName="BLOQUEADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Articulos">
+      <EntityTypeMapping TypeName="TutorialEntities.Articulo">
+        <MappingFragment StoreEntitySet="ARTICULOS">
+          <ScalarProperty Name="Id" ColumnName="ID" />
+          <ScalarProperty Name="Descripcion" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="CantPalletCompleto" ColumnName="CANT_PALLET_COMPLETO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Personas">
+      <EntityTypeMapping TypeName="IsTypeOf(TutorialEntities.Persona)">
+        <MappingFragment StoreEntitySet="PERSONAs">
+          <ScalarProperty Name="Id" ColumnName="ID" />
+          <ScalarProperty Name="Nombre" ColumnName="NOMBRE" />
+          <ScalarProperty Name="Apellido" ColumnName="APELLIDO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="TutorialEntities.Gerente">
+        <MappingFragment StoreEntitySet="GERENTEs">
+          <ScalarProperty Name="Cargo" ColumnName="CARGO" />
+          <ScalarProperty Name="Id" ColumnName="ID_PERSONA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(TutorialEntities.Desarrollador)">
+        <MappingFragment StoreEntitySet="DESARROLLADORs">
+          <ScalarProperty Name="Nivel" ColumnName="NIVEL" />
+          <ScalarProperty Name="Id" ColumnName="ID_PERSONA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="TutorialEntities.LiderTecnico">
+        <MappingFragment StoreEntitySet="LIDER_TECNICOs">
+          <ScalarProperty Name="Projecto" ColumnName="PROJECTO" />
+          <ScalarProperty Name="Id" ColumnName="ID_DESARROLLADOR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehiculos">
+      <EntityTypeMapping TypeName="IsTypeOf(TutorialEntities.Moto)">
+        <MappingFragment StoreEntitySet="MOTOs">
+          <ScalarProperty Name="EncPedal" ColumnName="ENC_PEDAL" />
+          <ScalarProperty Name="Id" ColumnName="ID" />
+          <ScalarProperty Name="Peso" ColumnName="PESO" />
+          <ScalarProperty Name="Descripcion" ColumnName="DESCRIPCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="TutorialEntities.Scooter">
+        <MappingFragment StoreEntitySet="SCOOTERs">
+          <ScalarProperty Name="Spoiler" ColumnName="SPOILER" />
+          <ScalarProperty Name="Id" ColumnName="ID" />
+          <ScalarProperty Name="Peso" ColumnName="PESO" />
+          <ScalarProperty Name="EncPedal" ColumnName="ENC_PEDAL" />
+          <ScalarProperty Name="Descripcion" ColumnName="DESCRIPCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="TutorialEntities.Automovil">
+        <MappingFragment StoreEntitySet="AUTOMOVILs">
+          <ScalarProperty Name="CantPuertas" ColumnName="CANT_PUERTAS" />
+          <ScalarProperty Name="Id" ColumnName="ID" />
+          <ScalarProperty Name="Peso" ColumnName="PESO" />
+          <ScalarProperty Name="Descripcion" ColumnName="DESCRIPCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Articulo_PalletSet" TypeName="TutorialEntities.Articulo_Pallet" StoreEntitySet="PALLETS">
+      <EndProperty Name="Articulo">
+        <ScalarProperty Name="Id" ColumnName="CODIGO" />
+      </EndProperty>
+      <EndProperty Name="Pallets">
+        <ScalarProperty Name="Id" ColumnName="ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
