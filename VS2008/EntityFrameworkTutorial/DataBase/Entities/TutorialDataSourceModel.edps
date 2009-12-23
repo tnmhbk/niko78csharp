@@ -6,8 +6,8 @@
       <Class UseSchemaAsPrefix="False" RemoveUnderscores="True" CodeCase="Capitalized" AddPrefix="" AddSuffix="" RemovePrefixes="" RemoveSuffixes="" PluralizationName="Singularize" />
       <Property RemoveUnderscores="True" CodeCase="Capitalized" AddPrefix="" AddSuffix="" RemovePrefixes="" RemoveSuffixes="" PluralizationName="Unchanged" />
     </Rules>
-    <Connection ConnectionString="User Id=ENTITY_TUTORIAL;Password=ENTITY_TUTORIAL;Server=ALMACENVM25;Home=oraclient10g_home1;Persist Security Info=True" Provider="Devart.Data.Oracle" />
-    <Generation Template="Entity C#" DestinationFolder="C:\Data\arnifer\Programacion\niko78csharp\trunk\VS2008\EntityFrameworkTutorial\TutorialEntities\Entities">
+    <Connection ConnectionString="User Id=ENTITY_TUTORIAL;Password=ENTITY_TUTORIAL;Server=ALMACENVM25;Home=odac;Persist Security Info=True" Provider="Devart.Data.Oracle" />
+    <Generation Template="Entity C#" DestinationFolder="E:\PROGRAMACION\Code.Google\trunk\VS2008\EntityFrameworkTutorial\TutorialEntities\Entities">
       <GeneratedFiles>
         <File Name="TutorialDataSourceModel.TutorialObjectContext.cs" />
         <File Name="TutorialDataSourceModel.Pallet.cs" />
@@ -17,10 +17,9 @@
         <File Name="TutorialDataSourceModel.Desarrollador.cs" />
         <File Name="TutorialDataSourceModel.LiderTecnico.cs" />
         <File Name="TutorialDataSourceModel.Vehiculo.cs" />
-        <File Name="TutorialDataSourceModel.Automovil.cs" />
-        <File Name="TutorialDataSourceModel.Camioneta.cs" />
-        <File Name="TutorialDataSourceModel.Sedan.cs" />
         <File Name="TutorialDataSourceModel.Moto.cs" />
+        <File Name="TutorialDataSourceModel.Automovil.cs" />
+        <File Name="TutorialDataSourceModel.Pasante.cs" />
       </GeneratedFiles>
     </Generation>
   </ProjectSettings>

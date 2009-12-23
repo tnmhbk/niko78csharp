@@ -12,28 +12,30 @@ namespace TutorialEntities
 {
 
     /// <summary>
-    /// There are no comments for TutorialEntities.Desarrollador in the schema.
+    /// There are no comments for TutorialEntities.Pasante in the schema.
     /// </summary>
     /// <KeyProperties>
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="TutorialEntities", Name="Desarrollador")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="TutorialEntities", Name="Pasante")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
-    public partial class Desarrollador : Persona
+    public partial class Pasante : Desarrollador
     {
         #region Factory Method
 
         /// <summary>
-        /// Create a new Desarrollador object.
+        /// Create a new Pasante object.
         /// </summary>
         /// <param name="id">Initial value of Id.</param>
         /// <param name="nivel">Initial value of Nivel.</param>
-        public static Desarrollador CreateDesarrollador(long id, string nivel)
+        /// <param name="universidad">Initial value of Universidad.</param>
+        public static Pasante CreatePasante(long id, string nivel, string universidad)
         {
-            Desarrollador desarrollador = new Desarrollador();
-            desarrollador.Id = id;
-            desarrollador.Nivel = nivel;
-            return desarrollador;
+            Pasante pasante = new Pasante();
+            pasante.Id = id;
+            pasante.Nivel = nivel;
+            pasante.Universidad = universidad;
+            return pasante;
         }
 
         #endregion
@@ -41,31 +43,31 @@ namespace TutorialEntities
         #region Properties
     
         /// <summary>
-        /// There are no comments for Nivel in the schema.
+        /// There are no comments for Universidad in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string Nivel
+        public string Universidad
         {
             get
             {
-                string value = this._Nivel;
-                OnGetNivel(ref value);
+                string value = this._Universidad;
+                OnGetUniversidad(ref value);
                 return value;
             }
             set
             {
-                this.OnNivelChanging(ref value);
-                this.ReportPropertyChanging("Nivel");
-                this._Nivel = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false);
-                this.ReportPropertyChanged("Nivel");
-                this.OnNivelChanged();
+                this.OnUniversidadChanging(ref value);
+                this.ReportPropertyChanging("Universidad");
+                this._Universidad = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false);
+                this.ReportPropertyChanged("Universidad");
+                this.OnUniversidadChanged();
             }
         }
-        private string _Nivel;
-        partial void OnGetNivel(ref string value);
-        partial void OnNivelChanging(ref string value);
-        partial void OnNivelChanged();
+        private string _Universidad;
+        partial void OnGetUniversidad(ref string value);
+        partial void OnUniversidadChanging(ref string value);
+        partial void OnUniversidadChanged();
 
         #endregion
     }

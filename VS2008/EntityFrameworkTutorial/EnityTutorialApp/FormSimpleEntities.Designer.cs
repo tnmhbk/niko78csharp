@@ -30,14 +30,15 @@
         {
             this.btnShowEntities = new System.Windows.Forms.Button();
             this.dgvMain = new System.Windows.Forms.DataGridView();
+            this.btnAgregarArticulo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
             this.SuspendLayout();
             // 
             // btnShowEntities
             // 
-            this.btnShowEntities.Location = new System.Drawing.Point(23, 21);
+            this.btnShowEntities.Location = new System.Drawing.Point(12, 12);
             this.btnShowEntities.Name = "btnShowEntities";
-            this.btnShowEntities.Size = new System.Drawing.Size(140, 40);
+            this.btnShowEntities.Size = new System.Drawing.Size(103, 26);
             this.btnShowEntities.TabIndex = 0;
             this.btnShowEntities.Text = "Get All Entities";
             this.btnShowEntities.UseVisualStyleBackColor = true;
@@ -55,11 +56,22 @@
             this.dgvMain.Size = new System.Drawing.Size(607, 359);
             this.dgvMain.TabIndex = 1;
             // 
+            // btnAgregarArticulo
+            // 
+            this.btnAgregarArticulo.Location = new System.Drawing.Point(121, 12);
+            this.btnAgregarArticulo.Name = "btnAgregarArticulo";
+            this.btnAgregarArticulo.Size = new System.Drawing.Size(103, 26);
+            this.btnAgregarArticulo.TabIndex = 2;
+            this.btnAgregarArticulo.Text = "Agregar Articulo";
+            this.btnAgregarArticulo.UseVisualStyleBackColor = true;
+            this.btnAgregarArticulo.Click += new System.EventHandler(this.AgregarArticulo_Click);
+            // 
             // FormSimpleEntities
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(661, 468);
+            this.Controls.Add(this.btnAgregarArticulo);
             this.Controls.Add(this.dgvMain);
             this.Controls.Add(this.btnShowEntities);
             this.Name = "FormSimpleEntities";
@@ -73,5 +85,6 @@
 
         private System.Windows.Forms.Button btnShowEntities;
         private System.Windows.Forms.DataGridView dgvMain;
+        private System.Windows.Forms.Button btnAgregarArticulo;
     }
 }
