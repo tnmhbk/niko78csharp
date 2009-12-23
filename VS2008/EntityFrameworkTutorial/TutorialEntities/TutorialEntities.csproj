@@ -54,13 +54,14 @@
     <Compile Include="ConnectionManager.cs" />
     <Compile Include="Entities\TutorialDataSourceModel.Articulo.cs" />
     <Compile Include="Entities\TutorialDataSourceModel.Automovil.cs" />
+    <Compile Include="Entities\TutorialDataSourceModel.Camioneta.cs" />
     <Compile Include="Entities\TutorialDataSourceModel.Desarrollador.cs" />
     <Compile Include="Entities\TutorialDataSourceModel.Gerente.cs" />
     <Compile Include="Entities\TutorialDataSourceModel.LiderTecnico.cs" />
     <Compile Include="Entities\TutorialDataSourceModel.Moto.cs" />
     <Compile Include="Entities\TutorialDataSourceModel.Pallet.cs" />
     <Compile Include="Entities\TutorialDataSourceModel.Persona.cs" />
-    <Compile Include="Entities\TutorialDataSourceModel.Scooter.cs" />
+    <Compile Include="Entities\TutorialDataSourceModel.Sedan.cs" />
     <Compile Include="Entities\TutorialDataSourceModel.TutorialObjectContext.cs" />
     <Compile Include="Entities\TutorialDataSourceModel.Vehiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

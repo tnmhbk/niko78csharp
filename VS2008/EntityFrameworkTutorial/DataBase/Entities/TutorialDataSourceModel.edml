@@ -12,9 +12,9 @@
           <EntitySet Name="LIDER_TECNICOs" EntityType="TutorialEntities.Store.LIDER_TECNICO" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="LIDER_TECNICO" />
           <EntitySet Name="PERSONAs" EntityType="TutorialEntities.Store.PERSONA" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="PERSONA" />
           <EntitySet Name="DESARROLLADORs" EntityType="TutorialEntities.Store.DESARROLLADOR" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="DESARROLLADOR" />
+          <EntitySet Name="CAMIONETAs" EntityType="TutorialEntities.Store.CAMIONETA" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="CAMIONETA" />
+          <EntitySet Name="SEDANs" EntityType="TutorialEntities.Store.SEDAN" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="SEDAN" />
           <EntitySet Name="MOTOs" EntityType="TutorialEntities.Store.MOTO" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="MOTO" />
-          <EntitySet Name="AUTOMOVILs" EntityType="TutorialEntities.Store.AUTOMOVIL" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="AUTOMOVIL" />
-          <EntitySet Name="SCOOTERs" EntityType="TutorialEntities.Store.SCOOTER" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="SCOOTER" />
           <AssociationSet Name="PALLETS_ARTICULOS" Association="TutorialEntities.Store.PALLETS_ARTICULOS">
             <End Role="ARTICULOS" EntitySet="ARTICULOS" />
             <End Role="PALLETS" EntitySet="PALLETS" />
@@ -79,33 +79,37 @@
           <Property Name="ID_PERSONA" Type="int64" Nullable="false" />
           <Property Name="NIVEL" Type="VARCHAR2" MaxLength="30" />
         </EntityType>
+        <EntityType Name="CAMIONETA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int64" Nullable="false" />
+          <Property Name="MODELO" Type="VARCHAR2" MaxLength="50" />
+          <Property Name="MARCA" Type="VARCHAR2" MaxLength="50" />
+          <Property Name="CILINDRADA" Type="int" />
+          <Property Name="CANTIDAD_PUERTAS" Type="int" />
+          <Property Name="CAPACIDAD_CAJA" Type="int" />
+        </EntityType>
+        <EntityType Name="SEDAN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int64" Nullable="false" />
+          <Property Name="MODELO" Type="VARCHAR2" MaxLength="50" />
+          <Property Name="MARCA" Type="VARCHAR2" MaxLength="50" />
+          <Property Name="CILINDRADA" Type="int" />
+          <Property Name="CANTIDAD_PUERTAS" Type="int" />
+          <Property Name="CAPACIDAD_BAUL" Type="int" />
+        </EntityType>
         <EntityType Name="MOTO">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int64" Nullable="false" />
-          <Property Name="PESO" Type="int" />
-          <Property Name="ENC_PEDAL" Type="CHAR" MaxLength="1" />
-          <Property Name="DESCRIPCION" Type="VARCHAR2" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="AUTOMOVIL">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int64" Nullable="false" />
-          <Property Name="PESO" Type="int" />
-          <Property Name="CANT_PUERTAS" Type="int" />
-          <Property Name="DESCRIPCION" Type="VARCHAR2" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="SCOOTER">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int64" Nullable="false" />
-          <Property Name="PESO" Type="int" />
-          <Property Name="ENC_PEDAL" Type="CHAR" MaxLength="1" />
-          <Property Name="DESCRIPCION" Type="VARCHAR2" MaxLength="50" />
-          <Property Name="SPOILER" Type="CHAR" MaxLength="1" />
+          <Property Name="MODELO" Type="VARCHAR2" MaxLength="50" />
+          <Property Name="MARCA" Type="VARCHAR2" MaxLength="50" />
+          <Property Name="CILINDRADA" Type="int" />
+          <Property Name="ENCENDIDO_ELECTRONICO" Type="CHAR" MaxLength="1" />
         </EntityType>
         <Association Name="PALLETS_ARTICULOS">
           <End Role="ARTICULOS" Type="TutorialEntities.Store.ARTICULOS" Multiplicity="1" />
@@ -220,17 +224,21 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int64" Nullable="false" />
-          <Property Name="Peso" Type="Int32" Nullable="false" />
-          <Property Name="Descripcion" Type="String" />
+          <Property Name="Modelo" Type="String" Nullable="false" MaxLength="50" />
+          <Property Name="Marca" Type="String" Nullable="false" MaxLength="50" />
+          <Property Name="Cilindrada" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Automovil" BaseType="TutorialEntities.Vehiculo" devart:InheritanceType="TablePerConcreteType" devart:InheritanceModifier="Abstract" Abstract="true">
+          <Property Name="CantidadPuertas" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Camioneta" BaseType="TutorialEntities.Automovil" devart:InheritanceType="TablePerConcreteType">
+          <Property Name="CapacidadCaja" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sedan" BaseType="TutorialEntities.Automovil" devart:InheritanceType="TablePerConcreteType">
+          <Property Name="CapacidadBaul" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Moto" BaseType="TutorialEntities.Vehiculo" devart:InheritanceType="TablePerConcreteType">
-          <Property Name="EncPedal" Type="String" Nullable="false" DefaultValue="'Y'" MaxLength="1" />
-        </EntityType>
-        <EntityType Name="Automovil" BaseType="TutorialEntities.Vehiculo" devart:InheritanceType="TablePerConcreteType">
-          <Property Name="CantPuertas" Type="Int32" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Scooter" BaseType="TutorialEntities.Moto" devart:InheritanceType="TablePerConcreteType">
-          <Property Name="Spoiler" Type="String" Nullable="false" DefaultValue="'Y'  &#xA;" MaxLength="1" />
+          <Property Name="EncendidoElectronico" Type="String" Nullable="false" MaxLength="1" />
         </EntityType>
         <Association Name="Articulo_Pallet">
           <End Role="Articulo" Type="TutorialEntities.Articulo" Multiplicity="1" />
@@ -289,29 +297,33 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Vehiculos">
-            <EntityTypeMapping TypeName="IsTypeOf(TutorialEntities.Moto)">
+            <EntityTypeMapping TypeName="TutorialEntities.Camioneta">
+              <MappingFragment StoreEntitySet="CAMIONETAs">
+                <ScalarProperty Name="CapacidadCaja" ColumnName="CAPACIDAD_CAJA" />
+                <ScalarProperty Name="Id" ColumnName="ID" />
+                <ScalarProperty Name="Modelo" ColumnName="MODELO" />
+                <ScalarProperty Name="Marca" ColumnName="MARCA" />
+                <ScalarProperty Name="Cilindrada" ColumnName="CILINDRADA" />
+                <ScalarProperty Name="CantidadPuertas" ColumnName="CANTIDAD_PUERTAS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="TutorialEntities.Sedan">
+              <MappingFragment StoreEntitySet="SEDANs">
+                <ScalarProperty Name="CapacidadBaul" ColumnName="CAPACIDAD_BAUL" />
+                <ScalarProperty Name="Id" ColumnName="ID" />
+                <ScalarProperty Name="Modelo" ColumnName="MODELO" />
+                <ScalarProperty Name="Marca" ColumnName="MARCA" />
+                <ScalarProperty Name="Cilindrada" ColumnName="CILINDRADA" />
+                <ScalarProperty Name="CantidadPuertas" ColumnName="CANTIDAD_PUERTAS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="TutorialEntities.Moto">
               <MappingFragment StoreEntitySet="MOTOs">
-                <ScalarProperty Name="EncPedal" ColumnName="ENC_PEDAL" />
+                <ScalarProperty Name="EncendidoElectronico" ColumnName="ENCENDIDO_ELECTRONICO" />
                 <ScalarProperty Name="Id" ColumnName="ID" />
-                <ScalarProperty Name="Peso" ColumnName="PESO" />
-                <ScalarProperty Name="Descripcion" ColumnName="DESCRIPCION" />
-              </MappingFragment>
-            </EntityTypeMapping>
-            <EntityTypeMapping TypeName="TutorialEntities.Scooter">
-              <MappingFragment StoreEntitySet="SCOOTERs">
-                <ScalarProperty Name="Spoiler" ColumnName="SPOILER" />
-                <ScalarProperty Name="Id" ColumnName="ID" />
-                <ScalarProperty Name="Peso" ColumnName="PESO" />
-                <ScalarProperty Name="EncPedal" ColumnName="ENC_PEDAL" />
-                <ScalarProperty Name="Descripcion" ColumnName="DESCRIPCION" />
-              </MappingFragment>
-            </EntityTypeMapping>
-            <EntityTypeMapping TypeName="TutorialEntities.Automovil">
-              <MappingFragment StoreEntitySet="AUTOMOVILs">
-                <ScalarProperty Name="CantPuertas" ColumnName="CANT_PUERTAS" />
-                <ScalarProperty Name="Id" ColumnName="ID" />
-                <ScalarProperty Name="Peso" ColumnName="PESO" />
-                <ScalarProperty Name="Descripcion" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="Modelo" ColumnName="MODELO" />
+                <ScalarProperty Name="Marca" ColumnName="MARCA" />
+                <ScalarProperty Name="Cilindrada" ColumnName="CILINDRADA" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

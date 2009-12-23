@@ -17,8 +17,10 @@
         <File Name="TutorialDataSourceModel.Desarrollador.cs" />
         <File Name="TutorialDataSourceModel.LiderTecnico.cs" />
         <File Name="TutorialDataSourceModel.Vehiculo.cs" />
-        <File Name="TutorialDataSourceModel.Moto.cs" />
         <File Name="TutorialDataSourceModel.Automovil.cs" />
+        <File Name="TutorialDataSourceModel.Camioneta.cs" />
+        <File Name="TutorialDataSourceModel.Sedan.cs" />
+        <File Name="TutorialDataSourceModel.Moto.cs" />
       </GeneratedFiles>
     </Generation>
   </ProjectSettings>
