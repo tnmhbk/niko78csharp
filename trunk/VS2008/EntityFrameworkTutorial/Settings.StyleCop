@@ -5,6 +5,13 @@
   </GlobalSettings>
   <Analyzers>
     <Analyzer AnalyzerId="Microsoft.StyleCop.CSharp.NamingRules">
+      <Rules>
+        <Rule Name="FieldNamesMustNotBeginWithUnderscore">
+          <RuleSettings>
+            <BooleanProperty Name="Enabled">False</BooleanProperty>
+          </RuleSettings>
+        </Rule>
+      </Rules>
       <AnalyzerSettings>
         <CollectionProperty Name="Hungarian">
           <Value>as</Value>
@@ -23,7 +30,7 @@
     </Analyzer>
     <Analyzer AnalyzerId="Microsoft.StyleCop.CSharp.DocumentationRules">
       <AnalyzerSettings>
-        <StringProperty Name="CompanyName">Say No More</StringProperty>
+        <StringProperty Name="CompanyName">ABB Argentina</StringProperty>
         <StringProperty Name="Copyright">2009</StringProperty>
       </AnalyzerSettings>
     </Analyzer>

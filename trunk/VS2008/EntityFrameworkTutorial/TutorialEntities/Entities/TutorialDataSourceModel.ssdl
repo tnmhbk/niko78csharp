@@ -7,9 +7,9 @@
     <EntitySet Name="LIDER_TECNICOs" EntityType="TutorialEntities.Store.LIDER_TECNICO" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="LIDER_TECNICO" />
     <EntitySet Name="PERSONAs" EntityType="TutorialEntities.Store.PERSONA" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="PERSONA" />
     <EntitySet Name="DESARROLLADORs" EntityType="TutorialEntities.Store.DESARROLLADOR" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="DESARROLLADOR" />
-    <EntitySet Name="CAMIONETAs" EntityType="TutorialEntities.Store.CAMIONETA" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="CAMIONETA" />
-    <EntitySet Name="SEDANs" EntityType="TutorialEntities.Store.SEDAN" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="SEDAN" />
     <EntitySet Name="MOTOs" EntityType="TutorialEntities.Store.MOTO" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="MOTO" />
+    <EntitySet Name="AUTOMOVILs" EntityType="TutorialEntities.Store.AUTOMOVIL" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="AUTOMOVIL" />
+    <EntitySet Name="PASANTEs" EntityType="TutorialEntities.Store.PASANTE" store:Type="Tables" Schema="ENTITY_TUTORIAL" Table="PASANTE" />
     <AssociationSet Name="PALLETS_ARTICULOS" Association="TutorialEntities.Store.PALLETS_ARTICULOS">
       <End Role="ARTICULOS" EntitySet="ARTICULOS" />
       <End Role="PALLETS" EntitySet="PALLETS" />
@@ -25,6 +25,10 @@
     <AssociationSet Name="DESARROLLADOR_PERSONA" Association="TutorialEntities.Store.DESARROLLADOR_PERSONA">
       <End Role="PERSONA" EntitySet="PERSONAs" />
       <End Role="DESARROLLADOR" EntitySet="DESARROLLADORs" />
+    </AssociationSet>
+    <AssociationSet Name="PASANTE_FK" Association="TutorialEntities.Store.PASANTE_FK">
+      <End Role="DESARROLLADOR" EntitySet="DESARROLLADORs" />
+      <End Role="PASANTE" EntitySet="PASANTEs" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="PALLETS">
@@ -74,28 +78,6 @@
     <Property Name="ID_PERSONA" Type="int64" Nullable="false" />
     <Property Name="NIVEL" Type="VARCHAR2" MaxLength="30" />
   </EntityType>
-  <EntityType Name="CAMIONETA">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int64" Nullable="false" />
-    <Property Name="MODELO" Type="VARCHAR2" MaxLength="50" />
-    <Property Name="MARCA" Type="VARCHAR2" MaxLength="50" />
-    <Property Name="CILINDRADA" Type="int" />
-    <Property Name="CANTIDAD_PUERTAS" Type="int" />
-    <Property Name="CAPACIDAD_CAJA" Type="int" />
-  </EntityType>
-  <EntityType Name="SEDAN">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int64" Nullable="false" />
-    <Property Name="MODELO" Type="VARCHAR2" MaxLength="50" />
-    <Property Name="MARCA" Type="VARCHAR2" MaxLength="50" />
-    <Property Name="CILINDRADA" Type="int" />
-    <Property Name="CANTIDAD_PUERTAS" Type="int" />
-    <Property Name="CAPACIDAD_BAUL" Type="int" />
-  </EntityType>
   <EntityType Name="MOTO">
     <Key>
       <PropertyRef Name="ID" />
@@ -105,6 +87,23 @@
     <Property Name="MARCA" Type="VARCHAR2" MaxLength="50" />
     <Property Name="CILINDRADA" Type="int" />
     <Property Name="ENCENDIDO_ELECTRONICO" Type="CHAR" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="AUTOMOVIL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int64" Nullable="false" />
+    <Property Name="MODELO" Type="VARCHAR2" MaxLength="50" />
+    <Property Name="MARCA" Type="VARCHAR2" MaxLength="50" />
+    <Property Name="CILINDRADA" Type="int" />
+    <Property Name="CANT_PUERTAS" Type="int" />
+  </EntityType>
+  <EntityType Name="PASANTE">
+    <Key>
+      <PropertyRef Name="ID_PASANTE" />
+    </Key>
+    <Property Name="ID_PASANTE" Type="int64" Nullable="false" />
+    <Property Name="UNIVERSIDAD" Type="VARCHAR2" MaxLength="50" />
   </EntityType>
   <Association Name="PALLETS_ARTICULOS">
     <End Role="ARTICULOS" Type="TutorialEntities.Store.ARTICULOS" Multiplicity="1" />
@@ -154,4 +153,21 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="PASANTE_FK">
+    <End Role="DESARROLLADOR" Type="TutorialEntities.Store.DESARROLLADOR" Multiplicity="1" />
+    <End Role="PASANTE" Type="TutorialEntities.Store.PASANTE" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="DESARROLLADOR">
+        <PropertyRef Name="ID_PERSONA" />
+      </Principal>
+      <Dependent Role="PASANTE">
+        <PropertyRef Name="ID_PASANTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="AGREGARARTICULO" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ENTITY_TUTORIAL">
+    <Parameter Name="PID" Type="VARCHAR2" Mode="In" />
+    <Parameter Name="PDESCRIPCION" Type="VARCHAR2" Mode="In" />
+    <Parameter Name="PCANT_PALLET_COMPLETO" Type="decimal" Mode="In" />
+  </Function>
 </Schema>

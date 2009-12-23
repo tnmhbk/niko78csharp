@@ -1,16 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using TutorialEntities;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="FormHierarchyPerConcrete.cs" company="ABB Argentina">
+//   2009
+// </copyright>
+// <summary>
+//   Defines the FormHierarchyPerConcrete type.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace EnityTutorialApp
 {
+    using System;
+    using System.Windows.Forms;
+    using TutorialEntities;
+
     /// <summary>
+    /// Formulario Hierarchy Per Concrete
     /// </summary>
     public partial class FormHierarchyPerConcrete : Form
     {
@@ -22,6 +26,11 @@ namespace EnityTutorialApp
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Muestra los vehiculos.
+        /// </summary>
+        /// <param name="sender">The event sender.</param>
+        /// <param name="e">The event arguments.</param>
         private void ShowVehiculos_Click(object sender, EventArgs e)
         {
             using (TutorialObjectContext entities = new TutorialObjectContext(ConnectionManager.ConnectionString))
@@ -30,6 +39,11 @@ namespace EnityTutorialApp
             }
         }
 
+        /// <summary>
+        /// Muestra las motos.
+        /// </summary>
+        /// <param name="sender">The event sender.</param>
+        /// <param name="e">The event arguments.</param>
         private void ShowMotos_Click(object sender, EventArgs e)
         {
             using (TutorialObjectContext entities = new TutorialObjectContext(ConnectionManager.ConnectionString))
@@ -38,15 +52,12 @@ namespace EnityTutorialApp
             }
         }
 
+        /// <summary>
+        /// Muestra los automoviles.
+        /// </summary>
+        /// <param name="sender">The event sender.</param>
+        /// <param name="e">The event arguments.</param>
         private void ShowAutomoviles_Click(object sender, EventArgs e)
-        {
-            using (TutorialObjectContext entities = new TutorialObjectContext(ConnectionManager.ConnectionString))
-            {
-                dgvMain.DataSource = entities.Vehiculos.OfType<Camioneta>();
-            }
-        }
-
-        private void ShowScooters_Click(object sender, EventArgs e)
         {
             using (TutorialObjectContext entities = new TutorialObjectContext(ConnectionManager.ConnectionString))
             {
