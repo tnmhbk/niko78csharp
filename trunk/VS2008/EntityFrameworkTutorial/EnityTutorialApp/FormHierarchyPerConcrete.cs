@@ -42,7 +42,7 @@ namespace EnityTutorialApp
         {
             using (TutorialObjectContext entities = new TutorialObjectContext(ConnectionManager.ConnectionString))
             {
-                dgvMain.DataSource = entities.Vehiculos.OfType<Automovil>();
+                dgvMain.DataSource = entities.Vehiculos.OfType<Camioneta>();
             }
         }
 
@@ -50,7 +50,7 @@ namespace EnityTutorialApp
         {
             using (TutorialObjectContext entities = new TutorialObjectContext(ConnectionManager.ConnectionString))
             {
-                dgvMain.DataSource = entities.Vehiculos.OfType<Scooter>();
+                dgvMain.DataSource = entities.Vehiculos.OfType<Automovil>();
             }
         }
     }

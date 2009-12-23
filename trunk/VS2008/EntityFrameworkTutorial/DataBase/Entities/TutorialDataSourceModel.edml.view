@@ -141,8 +141,8 @@
               </Model>
             </Children>
             <Location>
-              <X>248 px</X>
-              <Y>38 px</Y>
+              <X>200 px</X>
+              <Y>-208 px</Y>
             </Location>
             <Size>
               <Width>150 px</Width>
@@ -277,8 +277,8 @@
               </Model>
             </Children>
             <Location>
-              <X>39 px</X>
-              <Y>46 px</Y>
+              <X>-48 px</X>
+              <Y>-208 px</Y>
             </Location>
             <Size>
               <Width>150 px</Width>
@@ -311,8 +311,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>148.6 px</X>
-                  <Y>61.65 px</Y>
+                  <X>0 px</X>
+                  <Y>57.5 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -323,8 +323,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>1.09999999999999 px</X>
-                  <Y>69.65 px</Y>
+                  <X>0 px</X>
+                  <Y>81.5 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -334,6 +334,16 @@
                 </CustomProperties>
               </Port>
             </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>122 px</X>
+                <Y>-150.5 px</Y>
+              </PointD>
+              <PointD>
+                <X>122 px</X>
+                <Y>-126.5 px</Y>
+              </PointD>
+            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <Oid xsi:type="SchemaModelOID">
               <Path>Articulo_Pallet</Path>
@@ -400,8 +410,8 @@
               </Model>
             </Children>
             <Location>
-              <X>40 px</X>
-              <Y>472 px</Y>
+              <X>-16 px</X>
+              <Y>240 px</Y>
             </Location>
             <Size>
               <Width>150 px</Width>
@@ -482,8 +492,8 @@
               </Model>
             </Children>
             <Location>
-              <X>782 px</X>
-              <Y>472 px</Y>
+              <X>224 px</X>
+              <Y>376 px</Y>
             </Location>
             <Size>
               <Width>150 px</Width>
@@ -602,8 +612,8 @@
               </Model>
             </Children>
             <Location>
-              <X>249 px</X>
-              <Y>456 px</Y>
+              <X>72 px</X>
+              <Y>8 px</Y>
             </Location>
             <Size>
               <Width>264 px</Width>
@@ -684,8 +694,8 @@
               </Model>
             </Children>
             <Location>
-              <X>572 px</X>
-              <Y>472 px</Y>
+              <X>432 px</X>
+              <Y>240 px</Y>
             </Location>
             <Size>
               <Width>150 px</Width>
@@ -718,11 +728,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>150.15 px</X>
-                  <Y>45.45 px</Y>
+                  <X>119 px</X>
+                  <Y>0 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
                 <CustomProperties>
                   <OID>38</OID>
                   <PortType>FloatAnchor</PortType>
@@ -730,11 +740,11 @@
               </Port>
               <Port>
                 <Location>
-                  <X>0.300000000000011 px</X>
-                  <Y>61.45 px</Y>
+                  <X>31 px</X>
+                  <Y>0 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Left</Align>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
                 <CustomProperties>
                   <OID>39</OID>
                   <PortType>FloatAnchor</PortType>
@@ -759,11 +769,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>0.350000000000023 px</X>
-                  <Y>45.45 px</Y>
+                  <X>60 px</X>
+                  <Y>0 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Left</Align>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
                 <CustomProperties>
                   <OID>41</OID>
                   <PortType>FloatAnchor</PortType>
@@ -771,17 +781,27 @@
               </Port>
               <Port>
                 <Location>
-                  <X>264.2 px</X>
-                  <Y>61.45 px</Y>
+                  <X>204 px</X>
+                  <Y>0 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
                 <CustomProperties>
                   <OID>42</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>492 px</X>
+                <Y>220 px</Y>
+              </PointD>
+              <PointD>
+                <X>276 px</X>
+                <Y>220 px</Y>
+              </PointD>
+            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <Oid xsi:type="SchemaModelOID">
               <Path>Persona_Desarrollador</Path>
@@ -800,11 +820,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>-0.350000000000023 px</X>
-                  <Y>45.45 px</Y>
+                  <X>71 px</X>
+                  <Y>0 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Left</Align>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
                 <CustomProperties>
                   <OID>44</OID>
                   <PortType>FloatAnchor</PortType>
@@ -812,17 +832,27 @@
               </Port>
               <Port>
                 <Location>
-                  <X>150.5 px</X>
-                  <Y>45.45 px</Y>
+                  <X>79 px</X>
+                  <Y>0 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
                 <CustomProperties>
                   <OID>45</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>295 px</X>
+                <Y>356 px</Y>
+              </PointD>
+              <PointD>
+                <X>511 px</X>
+                <Y>356 px</Y>
+              </PointD>
+            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <Oid xsi:type="SchemaModelOID">
               <Path>Desarrollador_LiderTecnico</Path>
@@ -852,29 +882,86 @@
                       <Height>16 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
-                      <Path>Moto.EncPedal</Path>
+                      <Path>Vehiculo.Id</Path>
+                      <TypeName>EntityDeveloper.EntityFramework.EntityProperty</TypeName>
+                    </Oid>
+                  </Model>
+                  <Model xsi:type="ClassPropertyVwModel">
+                    <CustomProperties>
+                      <OID>49</OID>
+                      <Parent>47</Parent>
+                    </CustomProperties>
+                    <Children />
+                    <Location>
+                      <X>0 px</X>
+                      <Y>16 px</Y>
+                    </Location>
+                    <Size>
+                      <Width>148 px</Width>
+                      <Height>16 px</Height>
+                    </Size>
+                    <Oid xsi:type="SchemaModelOID">
+                      <Path>Vehiculo.Modelo</Path>
+                      <TypeName>EntityDeveloper.EntityFramework.EntityProperty</TypeName>
+                    </Oid>
+                  </Model>
+                  <Model xsi:type="ClassPropertyVwModel">
+                    <CustomProperties>
+                      <OID>50</OID>
+                      <Parent>47</Parent>
+                    </CustomProperties>
+                    <Children />
+                    <Location>
+                      <X>0 px</X>
+                      <Y>32 px</Y>
+                    </Location>
+                    <Size>
+                      <Width>148 px</Width>
+                      <Height>16 px</Height>
+                    </Size>
+                    <Oid xsi:type="SchemaModelOID">
+                      <Path>Vehiculo.Marca</Path>
+                      <TypeName>EntityDeveloper.EntityFramework.EntityProperty</TypeName>
+                    </Oid>
+                  </Model>
+                  <Model xsi:type="ClassPropertyVwModel">
+                    <CustomProperties>
+                      <OID>51</OID>
+                      <Parent>47</Parent>
+                    </CustomProperties>
+                    <Children />
+                    <Location>
+                      <X>0 px</X>
+                      <Y>48 px</Y>
+                    </Location>
+                    <Size>
+                      <Width>148 px</Width>
+                      <Height>16 px</Height>
+                    </Size>
+                    <Oid xsi:type="SchemaModelOID">
+                      <Path>Vehiculo.Cilindrada</Path>
                       <TypeName>EntityDeveloper.EntityFramework.EntityProperty</TypeName>
                     </Oid>
                   </Model>
                 </Children>
                 <Size>
                   <Width>148 px</Width>
-                  <Height>17 px</Height>
+                  <Height>65 px</Height>
                 </Size>
                 <MaxSize>
                   <Width>0 px</Width>
-                  <Height>17 px</Height>
+                  <Height>65 px</Height>
                 </MaxSize>
               </Model>
               <Model xsi:type="RelationPropertiesVwModel">
                 <CustomProperties>
-                  <OID>49</OID>
+                  <OID>52</OID>
                   <Parent>46</Parent>
                 </CustomProperties>
                 <Children />
                 <Location>
                   <X>0 px</X>
-                  <Y>17 px</Y>
+                  <Y>65 px</Y>
                 </Location>
                 <Size>
                   <Width>148 px</Width>
@@ -889,44 +976,44 @@
               </Model>
             </Children>
             <Location>
-              <X>848 px</X>
-              <Y>240 px</Y>
+              <X>664 px</X>
+              <Y>-280 px</Y>
             </Location>
             <Size>
               <Width>150 px</Width>
-              <Height>91 px</Height>
+              <Height>139 px</Height>
             </Size>
             <MinSize>
               <Width>120 px</Width>
-              <Height>91 px</Height>
+              <Height>139 px</Height>
             </MinSize>
             <MaxSize>
               <Width>300 px</Width>
-              <Height>91 px</Height>
+              <Height>139 px</Height>
             </MaxSize>
             <Ports />
             <Oid xsi:type="SchemaModelOID">
-              <Path>Moto</Path>
+              <Path>Vehiculo</Path>
               <TypeName>EntityDeveloper.EntityFramework.EntityClass</TypeName>
             </Oid>
             <FixedHeight>44 px</FixedHeight>
           </Model>
           <Model xsi:type="ClassVwModel">
             <CustomProperties>
-              <OID>50</OID>
+              <OID>53</OID>
               <Parent>0</Parent>
             </CustomProperties>
             <Children>
               <Model xsi:type="PropertiesVwModel">
                 <CustomProperties>
-                  <OID>51</OID>
-                  <Parent>50</Parent>
+                  <OID>54</OID>
+                  <Parent>53</Parent>
                 </CustomProperties>
                 <Children>
                   <Model xsi:type="ClassPropertyVwModel">
                     <CustomProperties>
-                      <OID>52</OID>
-                      <Parent>51</Parent>
+                      <OID>55</OID>
+                      <Parent>54</Parent>
                     </CustomProperties>
                     <Children />
                     <Size>
@@ -934,7 +1021,7 @@
                       <Height>16 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
-                      <Path>Automovil.CantPuertas</Path>
+                      <Path>Automovil.CantidadPuertas</Path>
                       <TypeName>EntityDeveloper.EntityFramework.EntityProperty</TypeName>
                     </Oid>
                   </Model>
@@ -950,8 +1037,8 @@
               </Model>
               <Model xsi:type="RelationPropertiesVwModel">
                 <CustomProperties>
-                  <OID>53</OID>
-                  <Parent>50</Parent>
+                  <OID>56</OID>
+                  <Parent>53</Parent>
                 </CustomProperties>
                 <Children />
                 <Location>
@@ -971,8 +1058,8 @@
               </Model>
             </Children>
             <Location>
-              <X>1112 px</X>
-              <Y>240 px</Y>
+              <X>664 px</X>
+              <Y>-72 px</Y>
             </Location>
             <Size>
               <Width>150 px</Width>
@@ -993,222 +1080,41 @@
             </Oid>
             <FixedHeight>44 px</FixedHeight>
           </Model>
-          <Model xsi:type="ClassVwModel">
+          <Model xsi:type="InheritanceVwModel">
             <CustomProperties>
-              <OID>54</OID>
+              <OID>57</OID>
+              <OutModel>53</OutModel>
+              <InModel>46</InModel>
+              <OutPort>58</OutPort>
+              <InPort>59</InPort>
               <Parent>0</Parent>
             </CustomProperties>
-            <Children>
-              <Model xsi:type="PropertiesVwModel">
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>76 px</X>
+                  <Y>-5 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Top</Align>
                 <CustomProperties>
-                  <OID>55</OID>
-                  <Parent>54</Parent>
+                  <OID>58</OID>
+                  <PortType>FixedAnchor</PortType>
                 </CustomProperties>
-                <Children>
-                  <Model xsi:type="ClassPropertyVwModel">
-                    <CustomProperties>
-                      <OID>56</OID>
-                      <Parent>55</Parent>
-                    </CustomProperties>
-                    <Children />
-                    <Size>
-                      <Width>148 px</Width>
-                      <Height>16 px</Height>
-                    </Size>
-                    <Oid xsi:type="SchemaModelOID">
-                      <Path>Vehiculo.Id</Path>
-                      <TypeName>EntityDeveloper.EntityFramework.EntityProperty</TypeName>
-                    </Oid>
-                  </Model>
-                  <Model xsi:type="ClassPropertyVwModel">
-                    <CustomProperties>
-                      <OID>57</OID>
-                      <Parent>55</Parent>
-                    </CustomProperties>
-                    <Children />
-                    <Location>
-                      <X>0 px</X>
-                      <Y>16 px</Y>
-                    </Location>
-                    <Size>
-                      <Width>148 px</Width>
-                      <Height>16 px</Height>
-                    </Size>
-                    <Oid xsi:type="SchemaModelOID">
-                      <Path>Vehiculo.Peso</Path>
-                      <TypeName>EntityDeveloper.EntityFramework.EntityProperty</TypeName>
-                    </Oid>
-                  </Model>
-                  <Model xsi:type="ClassPropertyVwModel">
-                    <CustomProperties>
-                      <OID>58</OID>
-                      <Parent>55</Parent>
-                    </CustomProperties>
-                    <Children />
-                    <Location>
-                      <X>0 px</X>
-                      <Y>32 px</Y>
-                    </Location>
-                    <Size>
-                      <Width>148 px</Width>
-                      <Height>16 px</Height>
-                    </Size>
-                    <Oid xsi:type="SchemaModelOID">
-                      <Path>Vehiculo.Descripcion</Path>
-                      <TypeName>EntityDeveloper.EntityFramework.EntityProperty</TypeName>
-                    </Oid>
-                  </Model>
-                </Children>
-                <Size>
-                  <Width>148 px</Width>
-                  <Height>49 px</Height>
-                </Size>
-                <MaxSize>
-                  <Width>0 px</Width>
-                  <Height>49 px</Height>
-                </MaxSize>
-              </Model>
-              <Model xsi:type="RelationPropertiesVwModel">
+              </Port>
+              <Port>
+                <Location>
+                  <X>76 px</X>
+                  <Y>137 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
                 <CustomProperties>
                   <OID>59</OID>
-                  <Parent>54</Parent>
-                </CustomProperties>
-                <Children />
-                <Location>
-                  <X>0 px</X>
-                  <Y>49 px</Y>
-                </Location>
-                <Size>
-                  <Width>148 px</Width>
-                  <Height>19 px</Height>
-                </Size>
-                <MaxSize>
-                  <Width>0 px</Width>
-                  <Height>19 px</Height>
-                </MaxSize>
-                <Hidden>false</Hidden>
-                <IsCollapsed>true</IsCollapsed>
-              </Model>
-            </Children>
-            <Location>
-              <X>960 px</X>
-              <Y>48 px</Y>
-            </Location>
-            <Size>
-              <Width>150 px</Width>
-              <Height>123 px</Height>
-            </Size>
-            <MinSize>
-              <Width>120 px</Width>
-              <Height>123 px</Height>
-            </MinSize>
-            <MaxSize>
-              <Width>300 px</Width>
-              <Height>123 px</Height>
-            </MaxSize>
-            <Ports />
-            <Oid xsi:type="SchemaModelOID">
-              <Path>Vehiculo</Path>
-              <TypeName>EntityDeveloper.EntityFramework.EntityClass</TypeName>
-            </Oid>
-            <FixedHeight>44 px</FixedHeight>
-          </Model>
-          <Model xsi:type="InheritanceVwModel">
-            <CustomProperties>
-              <OID>60</OID>
-              <OutModel>46</OutModel>
-              <InModel>54</InModel>
-              <OutPort>61</OutPort>
-              <InPort>62</InPort>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port>
-                <Location>
-                  <X>127 px</X>
-                  <Y>0 px</Y>
-                </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
-                <CustomProperties>
-                  <OID>61</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-              <Port>
-                <Location>
-                  <X>65 px</X>
-                  <Y>107 px</Y>
-                </Location>
-                <Anchors>None</Anchors>
-                <Align>Bottom</Align>
-                <CustomProperties>
-                  <OID>62</OID>
                   <PortType>FixedAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
-            <BendPoints>
-              <PointD>
-                <X>975 px</X>
-                <Y>236 px</Y>
-              </PointD>
-              <PointD>
-                <X>1025 px</X>
-                <Y>236 px</Y>
-              </PointD>
-            </BendPoints>
-            <IsManuallyRouted>false</IsManuallyRouted>
-            <Oid xsi:type="SchemaModelOID">
-              <Path>Vehiculo_Moto</Path>
-              <TypeName>EntityDeveloper.EntityFramework.EntityInheritance</TypeName>
-            </Oid>
-          </Model>
-          <Model xsi:type="InheritanceVwModel">
-            <CustomProperties>
-              <OID>63</OID>
-              <OutModel>50</OutModel>
-              <InModel>54</InModel>
-              <OutPort>64</OutPort>
-              <InPort>65</InPort>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port>
-                <Location>
-                  <X>37.5 px</X>
-                  <Y>0 px</Y>
-                </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
-                <CustomProperties>
-                  <OID>64</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-              <Port>
-                <Location>
-                  <X>101 px</X>
-                  <Y>105 px</Y>
-                </Location>
-                <Anchors>None</Anchors>
-                <Align>Bottom</Align>
-                <CustomProperties>
-                  <OID>65</OID>
-                  <PortType>FixedAnchor</PortType>
-                </CustomProperties>
-              </Port>
-            </PortAnchors>
-            <BendPoints>
-              <PointD>
-                <X>1149.5 px</X>
-                <Y>236 px</Y>
-              </PointD>
-              <PointD>
-                <X>1061 px</X>
-                <Y>236 px</Y>
-              </PointD>
-            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <Oid xsi:type="SchemaModelOID">
               <Path>Vehiculo_Automovil</Path>
@@ -1217,20 +1123,20 @@
           </Model>
           <Model xsi:type="ClassVwModel">
             <CustomProperties>
-              <OID>66</OID>
+              <OID>60</OID>
               <Parent>0</Parent>
             </CustomProperties>
             <Children>
               <Model xsi:type="PropertiesVwModel">
                 <CustomProperties>
-                  <OID>67</OID>
-                  <Parent>66</Parent>
+                  <OID>61</OID>
+                  <Parent>60</Parent>
                 </CustomProperties>
                 <Children>
                   <Model xsi:type="ClassPropertyVwModel">
                     <CustomProperties>
-                      <OID>68</OID>
-                      <Parent>67</Parent>
+                      <OID>62</OID>
+                      <Parent>61</Parent>
                     </CustomProperties>
                     <Children />
                     <Size>
@@ -1238,7 +1144,7 @@
                       <Height>16 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
-                      <Path>Scooter.Spoiler</Path>
+                      <Path>Camioneta.CapacidadCaja</Path>
                       <TypeName>EntityDeveloper.EntityFramework.EntityProperty</TypeName>
                     </Oid>
                   </Model>
@@ -1254,8 +1160,8 @@
               </Model>
               <Model xsi:type="RelationPropertiesVwModel">
                 <CustomProperties>
-                  <OID>69</OID>
-                  <Parent>66</Parent>
+                  <OID>63</OID>
+                  <Parent>60</Parent>
                 </CustomProperties>
                 <Children />
                 <Location>
@@ -1275,8 +1181,8 @@
               </Model>
             </Children>
             <Location>
-              <X>968 px</X>
-              <Y>392 px</Y>
+              <X>584 px</X>
+              <Y>64 px</Y>
             </Location>
             <Size>
               <Width>150 px</Width>
@@ -1292,59 +1198,309 @@
             </MaxSize>
             <Ports />
             <Oid xsi:type="SchemaModelOID">
-              <Path>Scooter</Path>
+              <Path>Camioneta</Path>
+              <TypeName>EntityDeveloper.EntityFramework.EntityClass</TypeName>
+            </Oid>
+            <FixedHeight>44 px</FixedHeight>
+          </Model>
+          <Model xsi:type="ClassVwModel">
+            <CustomProperties>
+              <OID>64</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Children>
+              <Model xsi:type="PropertiesVwModel">
+                <CustomProperties>
+                  <OID>65</OID>
+                  <Parent>64</Parent>
+                </CustomProperties>
+                <Children>
+                  <Model xsi:type="ClassPropertyVwModel">
+                    <CustomProperties>
+                      <OID>66</OID>
+                      <Parent>65</Parent>
+                    </CustomProperties>
+                    <Children />
+                    <Size>
+                      <Width>148 px</Width>
+                      <Height>16 px</Height>
+                    </Size>
+                    <Oid xsi:type="SchemaModelOID">
+                      <Path>Sedan.CapacidadBaul</Path>
+                      <TypeName>EntityDeveloper.EntityFramework.EntityProperty</TypeName>
+                    </Oid>
+                  </Model>
+                </Children>
+                <Size>
+                  <Width>148 px</Width>
+                  <Height>17 px</Height>
+                </Size>
+                <MaxSize>
+                  <Width>0 px</Width>
+                  <Height>17 px</Height>
+                </MaxSize>
+              </Model>
+              <Model xsi:type="RelationPropertiesVwModel">
+                <CustomProperties>
+                  <OID>67</OID>
+                  <Parent>64</Parent>
+                </CustomProperties>
+                <Children />
+                <Location>
+                  <X>0 px</X>
+                  <Y>17 px</Y>
+                </Location>
+                <Size>
+                  <Width>148 px</Width>
+                  <Height>19 px</Height>
+                </Size>
+                <MaxSize>
+                  <Width>0 px</Width>
+                  <Height>19 px</Height>
+                </MaxSize>
+                <Hidden>false</Hidden>
+                <IsCollapsed>true</IsCollapsed>
+              </Model>
+            </Children>
+            <Location>
+              <X>784 px</X>
+              <Y>64 px</Y>
+            </Location>
+            <Size>
+              <Width>150 px</Width>
+              <Height>91 px</Height>
+            </Size>
+            <MinSize>
+              <Width>120 px</Width>
+              <Height>91 px</Height>
+            </MinSize>
+            <MaxSize>
+              <Width>300 px</Width>
+              <Height>91 px</Height>
+            </MaxSize>
+            <Ports />
+            <Oid xsi:type="SchemaModelOID">
+              <Path>Sedan</Path>
               <TypeName>EntityDeveloper.EntityFramework.EntityClass</TypeName>
             </Oid>
             <FixedHeight>44 px</FixedHeight>
           </Model>
           <Model xsi:type="InheritanceVwModel">
             <CustomProperties>
-              <OID>70</OID>
-              <OutModel>66</OutModel>
-              <InModel>46</InModel>
-              <OutPort>71</OutPort>
-              <InPort>72</InPort>
+              <OID>68</OID>
+              <OutModel>64</OutModel>
+              <InModel>53</InModel>
+              <OutPort>69</OutPort>
+              <InPort>70</InPort>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>71 px</X>
+                  <X>15 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
                 <CustomProperties>
-                  <OID>71</OID>
+                  <OID>69</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
               <Port>
                 <Location>
-                  <X>79 px</X>
+                  <X>135 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Bottom</Align>
                 <CustomProperties>
+                  <OID>70</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <Oid xsi:type="SchemaModelOID">
+              <Path>Automovil_Sedan</Path>
+              <TypeName>EntityDeveloper.EntityFramework.EntityInheritance</TypeName>
+            </Oid>
+          </Model>
+          <Model xsi:type="InheritanceVwModel">
+            <CustomProperties>
+              <OID>71</OID>
+              <OutModel>60</OutModel>
+              <InModel>53</InModel>
+              <OutPort>72</OutPort>
+              <InPort>73</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>115 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
                   <OID>72</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>35 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>73</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <Oid xsi:type="SchemaModelOID">
+              <Path>Automovil_Camioneta</Path>
+              <TypeName>EntityDeveloper.EntityFramework.EntityInheritance</TypeName>
+            </Oid>
+          </Model>
+          <Model xsi:type="ClassVwModel">
+            <CustomProperties>
+              <OID>74</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Children>
+              <Model xsi:type="PropertiesVwModel">
+                <CustomProperties>
+                  <OID>75</OID>
+                  <Parent>74</Parent>
+                </CustomProperties>
+                <Children>
+                  <Model xsi:type="ClassPropertyVwModel">
+                    <CustomProperties>
+                      <OID>76</OID>
+                      <Parent>75</Parent>
+                    </CustomProperties>
+                    <Children />
+                    <Size>
+                      <Width>148 px</Width>
+                      <Height>16 px</Height>
+                    </Size>
+                    <Oid xsi:type="SchemaModelOID">
+                      <Path>Moto.EncendidoElectronico</Path>
+                      <TypeName>EntityDeveloper.EntityFramework.EntityProperty</TypeName>
+                    </Oid>
+                  </Model>
+                </Children>
+                <Size>
+                  <Width>148 px</Width>
+                  <Height>17 px</Height>
+                </Size>
+                <MaxSize>
+                  <Width>0 px</Width>
+                  <Height>17 px</Height>
+                </MaxSize>
+              </Model>
+              <Model xsi:type="RelationPropertiesVwModel">
+                <CustomProperties>
+                  <OID>77</OID>
+                  <Parent>74</Parent>
+                </CustomProperties>
+                <Children />
+                <Location>
+                  <X>0 px</X>
+                  <Y>17 px</Y>
+                </Location>
+                <Size>
+                  <Width>148 px</Width>
+                  <Height>19 px</Height>
+                </Size>
+                <MaxSize>
+                  <Width>0 px</Width>
+                  <Height>19 px</Height>
+                </MaxSize>
+                <Hidden>false</Hidden>
+                <IsCollapsed>true</IsCollapsed>
+              </Model>
+            </Children>
+            <Location>
+              <X>456 px</X>
+              <Y>-104 px</Y>
+            </Location>
+            <Size>
+              <Width>150 px</Width>
+              <Height>91 px</Height>
+            </Size>
+            <MinSize>
+              <Width>120 px</Width>
+              <Height>91 px</Height>
+            </MinSize>
+            <MaxSize>
+              <Width>300 px</Width>
+              <Height>91 px</Height>
+            </MaxSize>
+            <Ports />
+            <Oid xsi:type="SchemaModelOID">
+              <Path>Moto</Path>
+              <TypeName>EntityDeveloper.EntityFramework.EntityClass</TypeName>
+            </Oid>
+            <FixedHeight>44 px</FixedHeight>
+          </Model>
+          <Model xsi:type="InheritanceVwModel">
+            <CustomProperties>
+              <OID>78</OID>
+              <OutModel>74</OutModel>
+              <InModel>46</InModel>
+              <OutPort>79</OutPort>
+              <InPort>80</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>45.5 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>79</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>37.5 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>80</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>1039 px</X>
-                <Y>348 px</Y>
+                <X>626 px</X>
+                <Y>-58.5 px</Y>
               </PointD>
               <PointD>
-                <X>927 px</X>
-                <Y>348 px</Y>
+                <X>626 px</X>
+                <Y>-121 px</Y>
+              </PointD>
+              <PointD>
+                <X>701.5 px</X>
+                <Y>-121 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <Oid xsi:type="SchemaModelOID">
-              <Path>Moto_Scooter</Path>
+              <Path>Vehiculo_Moto</Path>
               <TypeName>EntityDeveloper.EntityFramework.EntityInheritance</TypeName>
             </Oid>
           </Model>
@@ -1354,8 +1510,8 @@
           <ScaleMode>Free</ScaleMode>
           <Scale>1</Scale>
           <Location>
-            <X>189 px</X>
-            <Y>127 px</Y>
+            <X>-79 px</X>
+            <Y>-361 px</Y>
           </Location>
         </ViewPort>
         <Oid xsi:type="SchemaModelOID">

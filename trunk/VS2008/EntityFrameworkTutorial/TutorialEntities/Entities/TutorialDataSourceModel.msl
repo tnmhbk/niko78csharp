@@ -48,29 +48,33 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Vehiculos">
-      <EntityTypeMapping TypeName="IsTypeOf(TutorialEntities.Moto)">
+      <EntityTypeMapping TypeName="TutorialEntities.Camioneta">
+        <MappingFragment StoreEntitySet="CAMIONETAs">
+          <ScalarProperty Name="CapacidadCaja" ColumnName="CAPACIDAD_CAJA" />
+          <ScalarProperty Name="Id" ColumnName="ID" />
+          <ScalarProperty Name="Modelo" ColumnName="MODELO" />
+          <ScalarProperty Name="Marca" ColumnName="MARCA" />
+          <ScalarProperty Name="Cilindrada" ColumnName="CILINDRADA" />
+          <ScalarProperty Name="CantidadPuertas" ColumnName="CANTIDAD_PUERTAS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="TutorialEntities.Sedan">
+        <MappingFragment StoreEntitySet="SEDANs">
+          <ScalarProperty Name="CapacidadBaul" ColumnName="CAPACIDAD_BAUL" />
+          <ScalarProperty Name="Id" ColumnName="ID" />
+          <ScalarProperty Name="Modelo" ColumnName="MODELO" />
+          <ScalarProperty Name="Marca" ColumnName="MARCA" />
+          <ScalarProperty Name="Cilindrada" ColumnName="CILINDRADA" />
+          <ScalarProperty Name="CantidadPuertas" ColumnName="CANTIDAD_PUERTAS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="TutorialEntities.Moto">
         <MappingFragment StoreEntitySet="MOTOs">
-          <ScalarProperty Name="EncPedal" ColumnName="ENC_PEDAL" />
+          <ScalarProperty Name="EncendidoElectronico" ColumnName="ENCENDIDO_ELECTRONICO" />
           <ScalarProperty Name="Id" ColumnName="ID" />
-          <ScalarProperty Name="Peso" ColumnName="PESO" />
-          <ScalarProperty Name="Descripcion" ColumnName="DESCRIPCION" />
-        </MappingFragment>
-      </EntityTypeMapping>
-      <EntityTypeMapping TypeName="TutorialEntities.Scooter">
-        <MappingFragment StoreEntitySet="SCOOTERs">
-          <ScalarProperty Name="Spoiler" ColumnName="SPOILER" />
-          <ScalarProperty Name="Id" ColumnName="ID" />
-          <ScalarProperty Name="Peso" ColumnName="PESO" />
-          <ScalarProperty Name="EncPedal" ColumnName="ENC_PEDAL" />
-          <ScalarProperty Name="Descripcion" ColumnName="DESCRIPCION" />
-        </MappingFragment>
-      </EntityTypeMapping>
-      <EntityTypeMapping TypeName="TutorialEntities.Automovil">
-        <MappingFragment StoreEntitySet="AUTOMOVILs">
-          <ScalarProperty Name="CantPuertas" ColumnName="CANT_PUERTAS" />
-          <ScalarProperty Name="Id" ColumnName="ID" />
-          <ScalarProperty Name="Peso" ColumnName="PESO" />
-          <ScalarProperty Name="Descripcion" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="Modelo" ColumnName="MODELO" />
+          <ScalarProperty Name="Marca" ColumnName="MARCA" />
+          <ScalarProperty Name="Cilindrada" ColumnName="CILINDRADA" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

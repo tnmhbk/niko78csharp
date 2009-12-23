@@ -7,6 +7,8 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
+using Devart.Common;
+
 namespace EnityTutorialApp
 {
     using System;
@@ -23,6 +25,7 @@ namespace EnityTutorialApp
         public FormMain()
         {
             InitializeComponent();
+            DbMonitor dbMonitor = new 
         }
 
         private void SimpleEntities_Click(object sender, EventArgs e)
