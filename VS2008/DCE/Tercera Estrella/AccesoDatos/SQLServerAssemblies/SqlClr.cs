@@ -27,17 +27,17 @@ namespace SQLServerAssemblies
         /// <summary>
         /// Id del operador.
         /// </summary>
-        private static readonly SqlMetaData _operador_id = new SqlMetaData("Id", SqlDbType.Int);
+        private static readonly SqlMetaData _operadorId = new SqlMetaData("Id", SqlDbType.Int);
 
         /// <summary>
         /// Nombre del operador.
         /// </summary>
-        private static readonly SqlMetaData _operador_nombre = new SqlMetaData("Nombre", SqlDbType.VarChar, 25);
+        private static readonly SqlMetaData _operadorNombre = new SqlMetaData("Nombre", SqlDbType.VarChar, 25);
 
         /// <summary>
         /// Apellido del operador.
         /// </summary>
-        private static readonly SqlMetaData _operador_apellido = new SqlMetaData("Apellido", SqlDbType.VarChar, 25);
+        private static readonly SqlMetaData _operadorApellido = new SqlMetaData("Apellido", SqlDbType.VarChar, 25);
 
         #endregion
 
@@ -63,7 +63,7 @@ namespace SQLServerAssemblies
         [SqlProcedure]
         public static void GetOperadores()
         {
-            var record = new SqlDataRecord(new[] { _operador_id, _operador_nombre, _operador_apellido });
+            SqlDataRecord record = new SqlDataRecord(new[] { _operadorId, _operadorNombre, _operadorApellido });
 
             // Comienzo de la respuesta
             SqlContext.Pipe.SendResultsStart(record);
@@ -93,7 +93,7 @@ namespace SQLServerAssemblies
             {
                 connection.Open();
 
-                var command = new SqlCommand("SELECT Id, Upper(Nombre) Nombre, Upper(Apellido) Apellido FROM Personas ", connection);
+                SqlCommand command = new SqlCommand("SELECT Id, Upper(Nombre) Nombre, Upper(Apellido) Apellido FROM Personas ", connection);
 
                 // Ejecutamos el comando y lo mandamos hacia el cliente
                 SqlContext.Pipe.ExecuteAndSend(command);
