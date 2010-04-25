@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HelloEntityFramework.Data.Dal.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="HelloEntityFrameworkDataDalStoreContainer">
+          <EntitySet Name="Pallet" EntityType="HelloEntityFramework.Data.Dal.Store.Pallet" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Product" EntityType="HelloEntityFramework.Data.Dal.Store.Product" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="StorageUnit" EntityType="HelloEntityFramework.Data.Dal.Store.StorageUnit" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UnitItem" EntityType="HelloEntityFramework.Data.Dal.Store.UnitItem" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Pallet_Pallet" Association="HelloEntityFramework.Data.Dal.Store.FK_Pallet_Pallet">
+            <End Role="StorageUnit" EntitySet="StorageUnit" />
+            <End Role="Pallet" EntitySet="Pallet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UnitItem_Products" Association="HelloEntityFramework.Data.Dal.Store.FK_UnitItem_Products">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="UnitItem" EntitySet="UnitItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UnitItem_StorageUnit" Association="HelloEntityFramework.Data.Dal.Store.FK_UnitItem_StorageUnit">
+            <End Role="StorageUnit" EntitySet="StorageUnit" />
+            <End Role="UnitItem" EntitySet="UnitItem" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Pallet">
+          <Key>
+            <PropertyRef Name="IdStorageUnit" />
+          </Key>
+          <Property Name="IdStorageUnit" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="QuantityReserved" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="IdProduct" />
+          </Key>
+          <Property Name="IdProduct" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="StorageUnit">
+          <Key>
+            <PropertyRef Name="IdStorageUnit" />
+          </Key>
+          <Property Name="IdStorageUnit" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UnitItem">
+          <Key>
+            <PropertyRef Name="IdItem" />
+          </Key>
+          <Property Name="IdItem" Type="int" Nullable="false" />
+          <Property Name="IdStorageUnit" Type="int" Nullable="false" />
+          <Property Name="IdProduct" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <Association Name="FK_Pallet_Pallet">
+          <End Role="StorageUnit" Type="HelloEntityFramework.Data.Dal.Store.StorageUnit" Multiplicity="1" />
+          <End Role="Pallet" Type="HelloEntityFramework.Data.Dal.Store.Pallet" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="StorageUnit">
+              <PropertyRef Name="IdStorageUnit" />
+            </Principal>
+            <Dependent Role="Pallet">
+              <PropertyRef Name="IdStorageUnit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UnitItem_Products">
+          <End Role="Product" Type="HelloEntityFramework.Data.Dal.Store.Product" Multiplicity="1" />
+          <End Role="UnitItem" Type="HelloEntityFramework.Data.Dal.Store.UnitItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="IdProduct" />
+            </Principal>
+            <Dependent Role="UnitItem">
+              <PropertyRef Name="IdProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UnitItem_StorageUnit">
+          <End Role="StorageUnit" Type="HelloEntityFramework.Data.Dal.Store.StorageUnit" Multiplicity="1" />
+          <End Role="UnitItem" Type="HelloEntityFramework.Data.Dal.Store.UnitItem" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="StorageUnit">
+              <PropertyRef Name="IdStorageUnit" />
+            </Principal>
+            <Dependent Role="UnitItem">
+              <PropertyRef Name="IdItem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HelloEntityFramework.Data.Dal" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="TutorialEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Pallets" EntityType="HelloEntityFramework.Data.Dal.Pallet" />
+          <EntitySet Name="Products" EntityType="HelloEntityFramework.Data.Dal.Product" />
+          <EntitySet Name="StorageUnits" EntityType="HelloEntityFramework.Data.Dal.StorageUnit" />
+          <EntitySet Name="UnitItems" EntityType="HelloEntityFramework.Data.Dal.UnitItem" />
+          <AssociationSet Name="FK_Pallet_Pallet" Association="HelloEntityFramework.Data.Dal.FK_Pallet_Pallet">
+            <End Role="StorageUnit" EntitySet="StorageUnits" />
+            <End Role="Pallet" EntitySet="Pallets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UnitItem_Products" Association="HelloEntityFramework.Data.Dal.FK_UnitItem_Products">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="UnitItem" EntitySet="UnitItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UnitItem_StorageUnit" Association="HelloEntityFramework.Data.Dal.FK_UnitItem_StorageUnit">
+            <End Role="StorageUnit" EntitySet="StorageUnits" />
+            <End Role="UnitItem" EntitySet="UnitItems" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Pallet">
+          <Key>
+            <PropertyRef Name="IdStorageUnit" />
+          </Key>
+          <Property Type="Int32" Name="IdStorageUnit" Nullable="false" />
+          <Property Type="Int32" Name="Quantity" Nullable="false" />
+          <Property Type="Int32" Name="QuantityReserved" Nullable="false" />
+          <NavigationProperty Name="StorageUnit" Relationship="HelloEntityFramework.Data.Dal.FK_Pallet_Pallet" FromRole="Pallet" ToRole="StorageUnit" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="IdProduct" />
+          </Key>
+          <Property Type="String" Name="IdProduct" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="UnitItems" Relationship="HelloEntityFramework.Data.Dal.FK_UnitItem_Products" FromRole="Product" ToRole="UnitItem" />
+        </EntityType>
+        <EntityType Name="StorageUnit">
+          <Key>
+            <PropertyRef Name="IdStorageUnit" />
+          </Key>
+          <Property Type="Int32" Name="IdStorageUnit" Nullable="false" />
+          <NavigationProperty Name="Pallet" Relationship="HelloEntityFramework.Data.Dal.FK_Pallet_Pallet" FromRole="StorageUnit" ToRole="Pallet" />
+          <NavigationProperty Name="UnitItem" Relationship="HelloEntityFramework.Data.Dal.FK_UnitItem_StorageUnit" FromRole="StorageUnit" ToRole="UnitItem" />
+        </EntityType>
+        <EntityType Name="UnitItem">
+          <Key>
+            <PropertyRef Name="IdItem" />
+          </Key>
+          <Property Type="Int32" Name="IdItem" Nullable="false" />
+          <Property Type="Int32" Name="IdStorageUnit" Nullable="false" />
+          <Property Type="String" Name="IdProduct" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Product" Relationship="HelloEntityFramework.Data.Dal.FK_UnitItem_Products" FromRole="UnitItem" ToRole="Product" />
+          <NavigationProperty Name="StorageUnit" Relationship="HelloEntityFramework.Data.Dal.FK_UnitItem_StorageUnit" FromRole="UnitItem" ToRole="StorageUnit" />
+        </EntityType>
+        <Association Name="FK_Pallet_Pallet">
+          <End Type="HelloEntityFramework.Data.Dal.StorageUnit" Role="StorageUnit" Multiplicity="1" />
+          <End Type="HelloEntityFramework.Data.Dal.Pallet" Role="Pallet" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="StorageUnit">
+              <PropertyRef Name="IdStorageUnit" />
+            </Principal>
+            <Dependent Role="Pallet">
+              <PropertyRef Name="IdStorageUnit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UnitItem_Products">
+          <End Type="HelloEntityFramework.Data.Dal.Product" Role="Product" Multiplicity="1" />
+          <End Type="HelloEntityFramework.Data.Dal.UnitItem" Role="UnitItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="IdProduct" />
+            </Principal>
+            <Dependent Role="UnitItem">
+              <PropertyRef Name="IdProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UnitItem_StorageUnit">
+          <End Type="HelloEntityFramework.Data.Dal.StorageUnit" Role="StorageUnit" Multiplicity="1" />
+          <End Type="HelloEntityFramework.Data.Dal.UnitItem" Role="UnitItem" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="StorageUnit">
+              <PropertyRef Name="IdStorageUnit" />
+            </Principal>
+            <Dependent Role="UnitItem">
+              <PropertyRef Name="IdItem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HelloEntityFrameworkDataDalStoreContainer" CdmEntityContainer="TutorialEntities">
+          <EntitySetMapping Name="Pallets">
+            <EntityTypeMapping TypeName="HelloEntityFramework.Data.Dal.Pallet">
+              <MappingFragment StoreEntitySet="Pallet">
+                <ScalarProperty Name="QuantityReserved" ColumnName="QuantityReserved" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="IdStorageUnit" ColumnName="IdStorageUnit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="HelloEntityFramework.Data.Dal.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="IdProduct" ColumnName="IdProduct" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StorageUnits">
+            <EntityTypeMapping TypeName="HelloEntityFramework.Data.Dal.StorageUnit">
+              <MappingFragment StoreEntitySet="StorageUnit">
+                <ScalarProperty Name="IdStorageUnit" ColumnName="IdStorageUnit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UnitItems">
+            <EntityTypeMapping TypeName="HelloEntityFramework.Data.Dal.UnitItem">
+              <MappingFragment StoreEntitySet="UnitItem">
+                <ScalarProperty Name="IdProduct" ColumnName="IdProduct" />
+                <ScalarProperty Name="IdStorageUnit" ColumnName="IdStorageUnit" />
+                <ScalarProperty Name="IdItem" ColumnName="IdItem" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="EntityModel">
+        <EntityTypeShape EntityType="HelloEntityFramework.Data.Dal.Pallet" Width="1.5" PointX="8.125" PointY="3.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="HelloEntityFramework.Data.Dal.Product" Width="1.5" PointX="2" PointY="1" Height="1.4033821614583317" />
+        <EntityTypeShape EntityType="HelloEntityFramework.Data.Dal.StorageUnit" Width="1.5" PointX="8.125" PointY="1" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="HelloEntityFramework.Data.Dal.UnitItem" Width="1.5" PointX="5.125" PointY="1" Height="1.9802864583333317" />
+        <AssociationConnector Association="HelloEntityFramework.Data.Dal.FK_Pallet_Pallet" >
+          <ConnectorPoint PointX="8.875" PointY="2.5956835937499996" />
+          <ConnectorPoint PointX="8.875" PointY="3.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="HelloEntityFramework.Data.Dal.FK_UnitItem_Products" >
+          <ConnectorPoint PointX="3.5" PointY="1.7016910807291659" />
+          <ConnectorPoint PointX="5.125" PointY="1.7016910807291659" />
+        </AssociationConnector>
+        <AssociationConnector Association="HelloEntityFramework.Data.Dal.FK_UnitItem_StorageUnit" >
+          <ConnectorPoint PointX="8.125" PointY="1.7978417968749998" />
+          <ConnectorPoint PointX="6.625" PointY="1.7978417968749998" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
