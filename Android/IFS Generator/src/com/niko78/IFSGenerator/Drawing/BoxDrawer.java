@@ -81,6 +81,14 @@ public class BoxDrawer
 		DrawBox(canvas, _boxes.get(0));
 	}
 	
+	public void SetSelectedBoxValues(float posX, float posY)
+	{
+		_boxes.get(0).setPosX(posX);
+		_boxes.get(0).setPosY(posY);
+		
+		_boxes.get(0).UpdateTransformations();
+	}
+	
 	private void DrawBox(Canvas canvas, Box box)
 	{
 		// Calculate point screen points
