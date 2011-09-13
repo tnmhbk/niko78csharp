@@ -1,0 +1,107 @@
+﻿<#@ template hostspecific="True" debug="True" #>
+<#+ 
+/// <summary>
+/// Write class declaration
+/// </summary>
+/// <param name="className">class name</param>
+/// <param name="comment">class comment</param>
+/// <param name="ancestor">ancestor class, null if nothing</param>
+void WriteClass(string className, string comment)
+{
+	WriteClass(className, comment, null);
+}
+
+/// <summary>
+/// Write class declaration
+/// </summary>
+/// <param name="className">class name</param>
+/// <param name="comment">class comment</param>
+/// <param name="ancestor">ancestor class, null if nothing</param>
+void WriteClass(string className, string comment, string ancestor)
+{
+	WriteLineIndent("/// <summary>");
+	WriteLineIndent("/// " + comment);
+	WriteLineIndent("/// </summary>");
+
+	if (string.IsNullOrEmpty(ancestor))
+	{
+		WriteLineIndent("public class " + className);
+	}
+	else
+	{
+		WriteLineIndent("public class " + className + " : " + ancestor);		
+	}
+}
+
+/// <summary>
+/// Write open bracket and increase tab Indedent 
+/// </summary>
+/// <param name="nameSpace"></param>
+void WriteNamespace(string nameSpace)
+{
+	WriteLine("namespace " + nameSpace);
+}
+
+/// <summary>
+/// Write include namespace
+/// </summary>
+/// <param name="include">Include Namespace</param>
+void WriteUsing(string include)
+{
+	WriteLine("using " + include + ";");
+}
+
+/// <summary>
+/// Write open bracket and increase tab Indedent 
+/// </summary>
+void OpenBracket()
+{
+	WriteLineIndent("{");
+	tabIndex += 4;
+}
+
+/// <summary>
+/// Write close bracket and decrease tab Indedent 
+/// </summary>
+void CloseBracket()
+{
+ 	tabIndex -= 4;
+	WriteLineIndent("}");
+}
+
+/// <summary>
+/// Write spaces bases on current indent
+/// </summary>
+void WriteIndent(string text)
+{
+	Write(string.Empty.PadRight(tabIndex) + text);	
+}
+
+/// <summary>
+/// Write a line of text based on indent
+/// </summary>
+/// <param name="text"></param>
+void WriteLineIndent(string text)
+{
+	WriteLine(string.Empty.PadRight(tabIndex) + text);	
+}
+
+/// <summary>
+/// Reset blank spaces due to include directive
+/// </summary>
+void ResetBlankSpaces()
+{
+	this.GenerationEnvironment.Remove(0, this.GenerationEnvironment.Length);
+}
+
+/// <summary>
+/// Save current output to File
+/// </summary>
+/// <param name="outputFileName">File Name</param>
+void SaveOutputOld(string outputFileName)
+{
+	string templateDirectory = Path.GetDirectoryName(Host.TemplateFile);
+    string outputFilePath = Path.Combine(templateDirectory, outputFileName +".cs");
+    File.WriteAllText(outputFilePath, this.GenerationEnvironment.ToString()); 
+	this.GenerationEnvironment.Remove(0, this.GenerationEnvironment.Length);
+}#>

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyGenerator", "MyGenerator\MyGenerator.csproj", "{FCC945FC-181C-4FC8-B065-0F133AE088B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyClasses", "MyClasses\MyClasses.csproj", "{6D588140-041B-438C-A855-46156D556388}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FCC945FC-181C-4FC8-B065-0F133AE088B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCC945FC-181C-4FC8-B065-0F133AE088B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCC945FC-181C-4FC8-B065-0F133AE088B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCC945FC-181C-4FC8-B065-0F133AE088B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D588140-041B-438C-A855-46156D556388}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D588140-041B-438C-A855-46156D556388}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D588140-041B-438C-A855-46156D556388}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D588140-041B-438C-A855-46156D556388}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

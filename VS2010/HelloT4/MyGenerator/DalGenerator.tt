@@ -1,0 +1,74 @@
+﻿<#@ template  debug="true" hostSpecific="true" #>
+<#@ output extension="?" #>
+<#@ Assembly Name="System.Core.dll" #>
+<#@ Assembly Name="System.Windows.Forms.dll" #>
+<#@ Assembly name="$(SolutionDir)\MyClasses\bin\Debug\MyClasses.Dll" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Diagnostics" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="MyClasses" #>
+<#@ include file="CodeFucntions.ttinclude"#>
+<#@ include file="MultiOutput.ttinclude"#>
+<#
+   // Reset blank spaces due to include directive
+   ResetBlankSpaces();
+
+   // Generate Crid Dal files
+   GenerateCrudFile(typeof(Tank));
+   GenerateCrudFile(typeof(Person));
+
+   // Delete old outputs generated files
+   DeleteOldOutputs();
+#>
+
+<#+
+
+int tabIndex = 0;
+
+/// <summary>
+/// Generate Entity Crud File
+/// </summary>
+/// <param name="type"></param>
+void GenerateCrudFile(Type type)
+{
+	string entityName = type.Name;
+	
+	string dalName = entityName + "Dal";
+	
+	WriteUsing("MyClasses");
+	
+	WriteLine(string.Empty);
+	
+	WriteNamespace("MyGenerator");
+	OpenBracket();
+	
+	WriteClass(dalName, entityName + " Data Acess Layer");
+	OpenBracket();
+	
+	WriteGetByIdMethod(type);
+	
+	// Class bracket
+	CloseBracket();
+	
+	// Namespace bracket
+	CloseBracket();
+
+	// Save output to File
+	SaveOutput(dalName + ".cs");
+}
+
+void WriteGetByIdMethod(Type type)
+{
+	WriteLineIndent("public " + type.Name + " GetById(int id)" );
+	OpenBracket();
+	
+	WriteLineIndent("return null;");
+	
+	CloseBracket();
+}
+
+
+#>
