@@ -31,10 +31,10 @@
 				android:gravity="center_vertical" 
 				/>
 				<EditText 
-					android:inputType="numberDecimal" 
+					android:inputType="numberDecimal|numberSigned" 
 					android:id="@+id/edPosX"
 					android:layout_width="wrap_content"
-					android:layout_height="30sp"
+					android:layout_height="30dp"
 					android:textSize="10sp" 
 					android:singleLine="true" 
 					/>
@@ -47,10 +47,10 @@
 				android:gravity="center_vertical" 
 				/>
 				<EditText 
-					android:inputType="numberDecimal" 
+					android:inputType="numberDecimal|numberSigned" 
 					android:id="@+id/edPosY"
 					android:layout_width="wrap_content"
-					android:layout_height="30sp"
+					android:layout_height="30dp"
 					android:textSize="10sp" 
 					android:singleLine="true"
 					/>
@@ -67,11 +67,10 @@
 					android:inputType="numberDecimal" 
 					android:id="@+id/edWidth"
 					android:layout_width="wrap_content"
-					android:layout_height="30sp"
 					android:textSize="10sp" 
 					android:singleLine="true" 
 					android:gravity="center_vertical"
-					/>
+					android:layout_height="30dp"/>
 			</TableRow>
 			<TableRow>
 				<TextView 
@@ -84,18 +83,10 @@
 					android:inputType="numberDecimal" 
 					android:id="@+id/edHeight"
 					android:layout_width="wrap_content"
-					android:layout_height="30sp"
 					android:textSize="10sp" 
 					android:singleLine="true" 
-					/>
+					android:layout_height="30dp"/>
 			</TableRow>			
-            <Button android:id="@+id/btnApply"
-                android:paddingTop="10dp" 
-            	android:text="Apply"
-            	android:textSize="10sp"
-            	android:layout_width="wrap_content" 
-            	android:layout_height="40sp" 
-            	/>			
 		</TableLayout>
 	</LinearLayout>
 </LinearLayout>

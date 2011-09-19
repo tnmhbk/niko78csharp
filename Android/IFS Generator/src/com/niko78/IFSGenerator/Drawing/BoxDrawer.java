@@ -8,6 +8,7 @@ import java.util.List;
 
 import com.niko78.IFSGenerator.Common.Matrix3X3;
 import com.niko78.IFSGenerator.Common.Point;
+import com.niko78.IFSGenerator.Listeners.BoxParameter;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -76,17 +77,51 @@ public class BoxDrawer
 	    _worldToScreen[2][2] = 1.0F;
 	}
 	
+	/**
+	 * @param canvas 
+	 */
 	public void Draw(Canvas canvas)
 	{
 		DrawBox(canvas, _boxes.get(0));
 	}
 	
-	public void SetSelectedBoxValues(float posX, float posY)
+	/** Set selected Box Parameter
+	 * @param boxParameter The Box parameter to Set
+	 * @param value The box parameter Value
+	 */
+	public void setSelectedBoxParameter(BoxParameter boxParameter, float value)
 	{
-		_boxes.get(0).setPosX(posX);
-		_boxes.get(0).setPosY(posY);
+		Box box = GetSelectedBox();
 		
-		_boxes.get(0).UpdateTransformations();
+		if (box == null)
+		{
+			return;
+		}
+		
+		switch (boxParameter)
+		{
+		case PosX:
+			box.setPosX(value);
+			break;
+		case PosY:
+			box.setPosY(value);
+			break;
+		case Width:
+			box.setWidth(value);
+			break;			
+		case Height:
+			box.setHeight(value);
+			break;			
+		default:
+			break;
+		}
+
+		box.UpdateTransformations();
+	}
+	
+	public Box GetSelectedBox()
+	{
+		return _boxes.get(0);
 	}
 	
 	private void DrawBox(Canvas canvas, Box box)
@@ -97,6 +132,7 @@ public class BoxDrawer
 		Point pointC = Matrix3X3.Transform(_worldToScreen, box.Vertexes[2].X, box.Vertexes[2].Y);
 		Point pointD = Matrix3X3.Transform(_worldToScreen, box.Vertexes[3].X, box.Vertexes[3].Y);		
 		
+		// Draw Box lines
         canvas.drawLine(pointA.X, pointA.Y, pointB.X, pointB.Y, paint);
         canvas.drawLine(pointB.X, pointB.Y, pointC.X, pointC.Y, paint);
         canvas.drawLine(pointC.X, pointC.Y, pointD.X, pointD.Y, paint);
