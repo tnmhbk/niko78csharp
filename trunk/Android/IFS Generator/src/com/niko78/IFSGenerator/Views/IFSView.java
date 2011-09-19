@@ -3,7 +3,6 @@
  */
 package com.niko78.IFSGenerator.Views;
 
-import com.niko78.IFSGenerator.R;
 import com.niko78.IFSGenerator.Drawing.BoxDrawer;
 
 import android.content.Context;
@@ -19,26 +18,31 @@ import android.view.View;
  */
 public class IFSView extends View
 {
-    private BoxDrawer _boxDrawer;
-
+	private BoxDrawer _boxDrawer;
+	
     public IFSView(Context context)
     {
     	super(context);
-        
-    	_boxDrawer = new BoxDrawer(); 
     }
     
     public IFSView(Context context, AttributeSet attrs)
     {
        super(context, attrs); 
-
-       _boxDrawer = new BoxDrawer();
-    }    
+    }
+    
+    ///Set box drawer instance
+    public void setBoxDrawer(BoxDrawer boxDrawer)
+    {
+    	_boxDrawer = boxDrawer;
+    }
     
     @Override
     protected void onSizeChanged(int xNew, int yNew, int xOld, int yOld)
     {
-    	_boxDrawer.SizeChanged(xNew, yNew);
+        if (_boxDrawer != null)
+        {
+    	   _boxDrawer.SizeChanged(xNew, yNew);
+        }
     }
     
     @Override
@@ -48,12 +52,10 @@ public class IFSView extends View
          
          setBackgroundColor(Color.WHITE);         
          
-         _boxDrawer.Draw(canvas);
+         if (_boxDrawer != null)
+         {
+            _boxDrawer.Draw(canvas);
+         }
    }
-    
-    public void SetSelectedBoxValues(float posX, float posY) 
-    {
-    	_boxDrawer.SetSelectedBoxValues(posX, posY);
-    };
-    
+
 }
