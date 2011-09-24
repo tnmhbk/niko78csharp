@@ -23,7 +23,9 @@ public class MainActivity extends Activity
         SetListeners();
         
         
-        HelloRunneable helloTherad = new HelloRunneable((TextView)findViewById(R.id.texTitle));
+        Recorder helloTherad = new Recorder((TextView)findViewById(R.id.texTitle));
+        helloTherad.setRecording(true);
+        
         Thread th = new Thread(helloTherad);
         th.start();
         
