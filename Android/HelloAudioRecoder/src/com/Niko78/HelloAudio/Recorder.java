@@ -13,6 +13,7 @@ public class Recorder implements Runnable
 	private volatile boolean isRecording;
 	private final Object mutex = new Object();
 	private TextView _associatedView;	
+	float average = 0.0F;	
 
 	// Changing the sample resolution changes sample type. byte vs. short.
 	private static final int audioEncoding = AudioFormat.ENCODING_PCM_16BIT;
@@ -57,6 +58,7 @@ public class Recorder implements Runnable
 		bufferSize = 8000;
 		
 		AudioRecord recordInstance = new AudioRecord(MediaRecorder.AudioSource.MIC, this.getFrequency(), this.getChannelConfiguration(), this.getAudioEncoding(), bufferSize);
+		int state = recordInstance.getState();
 
 		short[] tempBuffer = new short[bufferSize];
 		
@@ -108,7 +110,7 @@ public class Recorder implements Runnable
 				throw new IllegalStateException("“read() returned AudioRecord.ERROR_INVALID_OPERATION");
 			}
 
-			float average = 0.0F;
+			average = 0.0F;
 			
 			for (int idxBuffer = 0; idxBuffer < bufferRead; ++idxBuffer) 
 			{
@@ -116,6 +118,17 @@ public class Recorder implements Runnable
 			}
 			
 			average = average / bufferRead;
+			
+			_associatedView.post
+			(
+				new Runnable() 
+					{
+						public void run() 
+						{
+							_associatedView.setText(Float.toString(average));
+						}
+					}
+			);
 			
 			
 
