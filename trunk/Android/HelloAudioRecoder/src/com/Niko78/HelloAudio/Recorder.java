@@ -1,9 +1,11 @@
 package com.Niko78.HelloAudio;
 
+import com.Niko78.HelloAudio.Runners.WaveUpdater;
+import com.Niko78.HelloAudio.Views.WaveView;
+
 import android.media.AudioFormat;
 import android.media.AudioRecord;
 import android.media.MediaRecorder;
-import android.widget.TextView;
 
 public class Recorder implements Runnable
 {
@@ -12,16 +14,13 @@ public class Recorder implements Runnable
 	private volatile boolean isPaused;
 	private volatile boolean isRecording;
 	private final Object mutex = new Object();
-	private TextView _associatedView;	
+	private WaveView _associatedView;	
 	float average = 0.0F;	
 
 	// Changing the sample resolution changes sample type. byte vs. short.
 	private static final int audioEncoding = AudioFormat.ENCODING_PCM_16BIT;
 
-/**
-*
-*/
-	public Recorder(TextView associatedView) 
+	public Recorder(WaveView associatedView) 
 	{
 		super();
 		this.setFrequency(8000);
@@ -55,10 +54,11 @@ public class Recorder implements Runnable
 		int bufferRead = 0;
 		int bufferSize = AudioRecord.getMinBufferSize(this.getFrequency(), this.getChannelConfiguration(), this.getAudioEncoding());
 		
-		bufferSize = 8000;
+		bufferSize = 16000;
 		
 		AudioRecord recordInstance = new AudioRecord(MediaRecorder.AudioSource.MIC, this.getFrequency(), this.getChannelConfiguration(), this.getAudioEncoding(), bufferSize);
-		int state = recordInstance.getState();
+
+		//int state = recordInstance.getState();
 
 		short[] tempBuffer = new short[bufferSize];
 		
@@ -85,15 +85,6 @@ public class Recorder implements Runnable
 				}
 			}
 
-			try 
-			{
-				Thread.sleep(500);
-			}
-			catch (InterruptedException e) 
-			{
-				
-			}
-			
 			// Read Audio buffer 
 			bufferRead = recordInstance.read(tempBuffer, 0, bufferSize);
 			
@@ -119,16 +110,21 @@ public class Recorder implements Runnable
 			
 			average = average / bufferRead;
 			
+			WaveUpdater waveUpdater = new WaveUpdater(_associatedView, tempBuffer);
+
+			_associatedView.post(waveUpdater);
+			/*
 			_associatedView.post
 			(
 				new Runnable() 
 					{
 						public void run() 
 						{
-							_associatedView.setText(Float.toString(average));
+							_associatedView.DrawWave(wave).setText(Float.toString(average));
 						}
 					}
 			);
+			*/
 			
 			
 

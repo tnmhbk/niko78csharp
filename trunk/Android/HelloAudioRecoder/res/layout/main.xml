@@ -4,16 +4,35 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
-<TextView  
-    android:id="@+id/texTitle"
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="Hello Audio Record"
+	<com.Niko78.HelloAudio.Views.WaveView
+	    android:id="@+id/waveView"
+		android:gravity="center_horizontal" 
+		android:background="#aaaa00"
+		android:layout_width="fill_parent" 
+		android:layout_height="200dp"
+	/>
+	<TextView  
+    	android:id="@+id/texTitle"
+    	android:layout_width="fill_parent" 
+    	android:layout_height="wrap_content" 
+    	android:text="Hello Audio Record"
     />
-<Button
-    android:id="@+id/btnMinBuffer"
-    android:text="Get Min Buffer Size"
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content"
+	<Button
+    	android:id="@+id/btnMinBuffer"
+    	android:text="Get Min Buffer Size"
+    	android:layout_width="fill_parent" 
+    	android:layout_height="wrap_content"
     />
+	<Button
+    	android:id="@+id/btnStart"
+    	android:text="Start"
+    	android:layout_width="fill_parent" 
+    	android:layout_height="wrap_content"
+    />    
+	<Button
+    	android:id="@+id/btnStop"
+    	android:text="Stop"
+    	android:layout_width="fill_parent" 
+    	android:layout_height="wrap_content"
+    />    
 </LinearLayout>
