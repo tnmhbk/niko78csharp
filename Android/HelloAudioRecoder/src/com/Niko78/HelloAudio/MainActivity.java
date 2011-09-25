@@ -1,17 +1,17 @@
 package com.Niko78.HelloAudio;
 
 import com.Niko78.HelloAudio.Listeners.ShowMinBufferListener;
+import com.Niko78.HelloAudio.Listeners.StartRecodingListener;
+import com.Niko78.HelloAudio.Listeners.StopRecoderListener;
+import com.Niko78.HelloAudio.Views.WaveView;
 
 import android.app.Activity;
-import android.media.AudioFormat;
-import android.media.AudioRecord;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends Activity 
 {
+	Recorder _recoder;
 	
     /** Called when the activity is first created. */
     @Override
@@ -19,16 +19,11 @@ public class MainActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+
+        // Recorder class
+        _recoder = new Recorder((WaveView)findViewById(R.id.waveView));
         
         SetListeners();
-        
-        
-        Recorder helloTherad = new Recorder((TextView)findViewById(R.id.texTitle));
-        helloTherad.setRecording(true);
-        
-        Thread th = new Thread(helloTherad);
-        th.start();
-        
     }
     
     
@@ -36,6 +31,12 @@ public class MainActivity extends Activity
     {
     	Button button = (Button)findViewById(R.id.btnMinBuffer);
     	button.setOnClickListener( new ShowMinBufferListener());
+    	
+    	Button btnStart = (Button)findViewById(R.id.btnStart);
+    	btnStart.setOnClickListener( new StartRecodingListener(_recoder));
+    	
+       	Button btnStop = (Button)findViewById(R.id.btnStop);
+       	btnStop.setOnClickListener( new StopRecoderListener(_recoder));    	
     }
     
     
