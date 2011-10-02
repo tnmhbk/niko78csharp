@@ -1,15 +1,15 @@
 package com.Niko78.HelloAudio.Listeners;
 
-import com.Niko78.HelloAudio.Recorder;
+import com.Niko78.HelloAudio.Recoders.BaseRecoder;
 
 import android.view.View;
 import android.view.View.OnClickListener;
 
 public class StartRecodingListener implements OnClickListener 
 {
-	Recorder _recoder;
+	BaseRecoder _recoder;
 	
-	public StartRecodingListener(Recorder recoder)
+	public StartRecodingListener(BaseRecoder recoder)
 	{
 		_recoder = recoder;
 	}
