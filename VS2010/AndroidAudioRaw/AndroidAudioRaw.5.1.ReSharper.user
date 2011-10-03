@@ -1,0 +1,167 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:ArrayViewer.Designer.cs" caret="0" fromTop="0" />
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:Matrix3x3.cs" caret="1948" fromTop="29" />
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:FFT2.cs" caret="3913" fromTop="20" />
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:ArrayViewer.cs" caret="1121" fromTop="29" />
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:FormMain.cs" caret="1399" fromTop="46" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:ArrayViewer.cs" caret="2864" fromTop="29" />
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:ArrayViewer.cs" caret="70" fromTop="2" />
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:ArrayViewer.cs" caret="2111" fromTop="16" />
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:FormMain.cs" caret="391" fromTop="28" />
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:FormMain.cs" caret="391" fromTop="24" />
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:FFT2.cs" caret="8010" fromTop="51" />
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:FFT2.cs" caret="8010" fromTop="205" />
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:FFT2.cs" caret="2353" fromTop="13" />
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:FormMain.cs" caret="391" fromTop="44" />
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:FormMain.cs" caret="391" fromTop="31" />
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:FormMain.cs" caret="2123" fromTop="40" />
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:ArrayViewer.cs" caret="1921" fromTop="23" />
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:ArrayViewer.cs" caret="184" fromTop="6" />
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:ArrayViewer.cs" caret="907" fromTop="26" />
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:ArrayViewer.cs" caret="1302" fromTop="34" />
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:ArrayViewer.cs" caret="1043" fromTop="24" />
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:ArrayViewer.cs" caret="757" fromTop="17" />
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:ArrayViewer.cs" caret="1121" fromTop="29" />
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:FormMain.cs" caret="391" fromTop="27" />
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:FormMain.cs" caret="50" fromTop="2" />
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:FormMain.cs" caret="391" fromTop="21" />
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:FormMain.cs" caret="391" fromTop="33" />
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:FormMain.cs" caret="391" fromTop="29" />
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:FormMain.cs" caret="561" fromTop="22" />
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:FormMain.cs" caret="2123" fromTop="63" />
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:FormMain.cs" caret="1262" fromTop="26" />
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:FormMain.cs" caret="1113" fromTop="20" />
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:FormMain.cs" caret="402" fromTop="15" />
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:FormMain.cs" caret="1936" fromTop="31" />
+      <File id="A333A591-24EA-4D39-B626-F63F26E14D5C/f:FormMain.cs" caret="2076" fromTop="33" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Qualified:System.Windows.Forms.PaintEventArgs">
+      <Item value="Graphics" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Default">
+      <Item value="private" priority="3" />
+      <Item value="void" priority="2" />
+      <Item value="Graphics`0" priority="1" />
+      <Item value="graphics" priority="1" />
+      <Item value="Length" priority="7" />
+      <Item value="Refresh`0" priority="0" />
+      <Item value="Pen`0" priority="0" />
+      <Item value="new" priority="6" />
+      <Item value="Pen" priority="0" />
+      <Item value="Color`0" priority="1" />
+      <Item value="streamReader" priority="0" />
+      <Item value="StreamReader" priority="0" />
+      <Item value="Open" priority="0" />
+      <Item value="binaryReader" priority="1" />
+      <Item value="BinaryReader" priority="0" />
+      <Item value="while" priority="0" />
+      <Item value="SortedDictionary" priority="0" />
+      <Item value="short" priority="0" />
+      <Item value="int" priority="3" />
+      <Item value="wave" priority="3" />
+      <Item value="i" priority="0" />
+      <Item value="avWave" priority="1" />
+      <Item value="e" priority="0" />
+      <Item value="Width" priority="0" />
+      <Item value="Height" priority="0" />
+      <Item value="Linq" priority="0" />
+      <Item value="_wave" priority="0" />
+      <Item value="Max`2" priority="0" />
+      <Item value="this" priority="0" />
+      <Item value="byte" priority="0" />
+      <Item value="a" priority="4" />
+      <Item value="if" priority="0" />
+      <Item value="else" priority="0" />
+      <Item value="BigEndianUnicode" priority="0" />
+      <Item value="bitConverter" priority="0" />
+      <Item value="FFT2" priority="0" />
+      <Item value="FFT2`0" priority="0" />
+      <Item value="fft2" priority="0" />
+      <Item value="for" priority="1" />
+      <Item value="float" priority="1" />
+      <Item value="re" priority="4" />
+      <Item value="img" priority="2" />
+      <Item value="avFFT" priority="1" />
+      <Item value="ToList`1" priority="0" />
+      <Item value="w" priority="0" />
+      <Item value="Cast`1" priority="0" />
+      <Item value="Select`2" priority="0" />
+      <Item value="Take`1" priority="1" />
+      <Item value="Application`0" priority="0" />
+      <Item value="double" priority="1" />
+      <Item value="modulo" priority="1" />
+      <Item value="Math`0" priority="1" />
+      <Item value="string" priority="0" />
+      <Item value="ArrayViewer`0" priority="1" />
+      <Item value="path" priority="0" />
+      <Item value="avFFt2" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Drawing.Graphics">
+      <Item value="DrawLines`0" priority="0" />
+      <Item value="DrawLine`0" priority="0" />
+      <Item value="Clear`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Drawing.Color">
+      <Item value="Blue" priority="0" />
+      <Item value="White" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.BinaryReader">
+      <Item value="ReadInt16`0" priority="1" />
+      <Item value="BaseStream" priority="0" />
+      <Item value="ReadByte`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.Stream">
+      <Item value="Position" priority="0" />
+      <Item value="Length" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:AndroidAudioRaw.ArrayViewer">
+      <Item value="DrawWave`0" priority="1" />
+      <Item value="Invalidate`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.FileStream">
+      <Item value="Close`0" priority="0" />
+      <Item value="Dispose`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:AndroidAudioRaw.FFT2">
+      <Item value="init`0" priority="0" />
+      <Item value="run`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
+      <Item value="ForEach`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IEnumerable`1">
+      <Item value="ToArray`1" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.Application">
+      <Item value="DoEvents`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Math">
+      <Item value="Sqrt`0" priority="0" />
+      <Item value="Log`0" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>
