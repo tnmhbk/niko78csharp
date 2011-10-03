@@ -35,15 +35,6 @@ public class FileRecoder extends BaseRecoder
 	@Override
 	protected void CaptureSound() throws InterruptedException 
 	{
-		// Wait until we’re recording…
-		synchronized (mutex) 	
-		{
-			while (!this.isRecording) 
-			{
-				mutex.wait();
-			}
-		}
-
 		BufferedOutputStream bufferedStreamInstance = null;
 		
 		if (fileName.exists()) 
@@ -71,7 +62,6 @@ public class FileRecoder extends BaseRecoder
 		
 		DataOutputStream dataOutputStreamInstance = new DataOutputStream(bufferedStreamInstance);		
 		
-		
 		// We’re important…
 		android.os.Process.setThreadPriority(android.os.Process.THREAD_PRIORITY_URGENT_AUDIO);
 		
@@ -79,11 +69,20 @@ public class FileRecoder extends BaseRecoder
 		int bufferRead = 0;
 		int bufferSize = AudioRecord.getMinBufferSize(this.getFrequency(), this.getChannelConfiguration(), this.getAudioEncoding());
 		
-		bufferSize = 16000;
+		bufferSize = 16384;
 		
-		AudioRecord recordInstance = new AudioRecord(MediaRecorder.AudioSource.MIC, this.getFrequency(), this.getChannelConfiguration(), this.getAudioEncoding(), bufferSize);
+		AudioRecord recordInstance = new AudioRecord(MediaRecorder.AudioSource.MIC, this.getFrequency(), this.getChannelConfiguration(), this.getAudioEncoding(), bufferSize * 2);
 
 		short[] tempBuffer = new short[bufferSize];
+		
+		// Wait until we’re recording…
+		synchronized (mutex) 	
+		{
+			while (!this.isRecording) 
+			{
+				mutex.wait();
+			}
+		}
 		
 		// Start Recording
 		recordInstance.startRecording();

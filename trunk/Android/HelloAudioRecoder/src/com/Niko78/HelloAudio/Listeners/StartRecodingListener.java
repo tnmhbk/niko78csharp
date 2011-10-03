@@ -18,9 +18,6 @@ public class StartRecodingListener implements OnClickListener
 	public void onClick(View v) 
 	{
         _recoder.setRecording(true);
-        Thread th = new Thread(_recoder);
-        th.start();
-		
 	}
 
 }
