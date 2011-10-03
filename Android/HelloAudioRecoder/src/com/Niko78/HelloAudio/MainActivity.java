@@ -27,6 +27,9 @@ public class MainActivity extends Activity
         _recoder = new FileRecoder();
         
         SetListeners();
+        
+        Thread th = new Thread(_recoder);
+        th.start();
     }
     
     
